@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# Environment secrets – NEVER commit these
+.env
+
+# Large data files (>50MB rule from assignment)
+*.csv.gz
+*.parquet
+generator/synthetic_data/
+
+# Cached weather JSON (too large to commit — regenerate with make s3)
+# Comment this out if you WANT to commit the weather cache
+# pipeline/bronze/weather/
+
+# Spark outputs and logs
+spark-warehouse/
+derby.log
+*.log
+metastore_db/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/settings.json
+.idea/
+*.iml
+
+# Jupyter
+.ipynb_checkpoints/
