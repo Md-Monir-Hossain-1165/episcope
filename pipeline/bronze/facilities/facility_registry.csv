@@ -1,0 +1,688 @@
+facility_id,facility_name,facility_type,district,division,latitude,longitude,total_beds,icu_beds,active
+FAC00001,Dhaka Union Health Centre 1,union_health_centre,Dhaka,Dhaka,23.91658,90.30025,5,0,1
+FAC00002,Dhaka Upazila Health Complex 2,upazila_health_complex,Dhaka,Dhaka,23.62855,90.37815,77,6,1
+FAC00003,Dhaka Upazila Health Complex 3,upazila_health_complex,Dhaka,Dhaka,23.60198,90.27999,62,6,1
+FAC00004,Dhaka Union Health Centre 4,union_health_centre,Dhaka,Dhaka,23.78795,90.3149,12,0,1
+FAC00005,Dhaka Private Clinic 5,private_clinic,Dhaka,Dhaka,23.77625,90.31476,30,13,1
+FAC00006,Dhaka Private Clinic 6,private_clinic,Dhaka,Dhaka,23.75747,90.35045,23,3,1
+FAC00007,Dhaka Upazila Health Complex 7,upazila_health_complex,Dhaka,Dhaka,23.79245,90.24742,32,7,1
+FAC00008,Dhaka Upazila Health Complex 8,upazila_health_complex,Dhaka,Dhaka,23.8669,90.5821,48,8,1
+FAC00009,Dhaka Upazila Health Complex 9,upazila_health_complex,Dhaka,Dhaka,23.88126,90.53265,34,2,1
+FAC00010,Dhaka Private Clinic 10,private_clinic,Dhaka,Dhaka,23.71261,90.4722,22,8,1
+FAC00011,Dhaka Upazila Health Complex 11,upazila_health_complex,Dhaka,Dhaka,23.70777,90.60463,43,7,1
+FAC00012,Dhaka Union Health Centre 12,union_health_centre,Dhaka,Dhaka,23.82532,90.30022,10,0,1
+FAC00013,Dhaka Upazila Health Complex 13,upazila_health_complex,Dhaka,Dhaka,23.83536,90.49373,70,7,1
+FAC00014,Dhaka Private Clinic 14,private_clinic,Dhaka,Dhaka,23.60442,90.3313,39,15,1
+FAC00015,Dhaka Upazila Health Complex 15,upazila_health_complex,Dhaka,Dhaka,23.72876,90.48089,66,7,1
+FAC00016,Dhaka Community Clinic 16,community_clinic,Dhaka,Dhaka,23.65316,90.25394,3,0,1
+FAC00017,Dhaka Union Health Centre 17,union_health_centre,Dhaka,Dhaka,23.98534,90.36824,18,0,1
+FAC00018,Dhaka Community Clinic 18,community_clinic,Dhaka,Dhaka,23.80745,90.52504,4,0,1
+FAC00019,Dhaka Upazila Health Complex 19,upazila_health_complex,Dhaka,Dhaka,23.88971,90.45492,40,8,1
+FAC00020,Dhaka Union Health Centre 20,union_health_centre,Dhaka,Dhaka,23.82311,90.61977,19,0,1
+FAC00021,Dhaka District Hospital 21,district_hospital,Dhaka,Dhaka,23.97961,90.52289,358,41,1
+FAC00022,Dhaka Upazila Health Complex 22,upazila_health_complex,Dhaka,Dhaka,23.65989,90.19393,48,5,1
+FAC00023,Dhaka Private Clinic 23,private_clinic,Dhaka,Dhaka,23.66891,90.59406,74,14,1
+FAC00024,Dhaka Upazila Health Complex 24,upazila_health_complex,Dhaka,Dhaka,23.85825,90.25975,70,6,1
+FAC00025,Dhaka Union Health Centre 25,union_health_centre,Dhaka,Dhaka,23.85384,90.40749,5,0,1
+FAC00026,Dhaka Upazila Health Complex 26,upazila_health_complex,Dhaka,Dhaka,23.61579,90.57882,49,3,1
+FAC00027,Dhaka Upazila Health Complex 27,upazila_health_complex,Dhaka,Dhaka,23.62075,90.52716,61,8,1
+FAC00028,Dhaka Upazila Health Complex 28,upazila_health_complex,Dhaka,Dhaka,23.66296,90.42468,60,6,1
+FAC00029,Dhaka Community Clinic 29,community_clinic,Dhaka,Dhaka,23.92262,90.49604,4,0,1
+FAC00030,Dhaka Upazila Health Complex 30,upazila_health_complex,Dhaka,Dhaka,23.75461,90.58833,72,7,1
+FAC00031,Dhaka Upazila Health Complex 31,upazila_health_complex,Dhaka,Dhaka,23.59956,90.43623,34,4,1
+FAC00032,Dhaka District Hospital 32,district_hospital,Dhaka,Dhaka,23.61996,90.20632,330,27,1
+FAC00033,Dhaka Union Health Centre 33,union_health_centre,Dhaka,Dhaka,23.88465,90.28676,13,0,1
+FAC00034,Dhaka Community Clinic 34,community_clinic,Dhaka,Dhaka,23.84383,90.29942,4,0,1
+FAC00035,Dhaka Union Health Centre 35,union_health_centre,Dhaka,Dhaka,23.63295,90.38216,8,0,1
+FAC00036,Dhaka Union Health Centre 36,union_health_centre,Dhaka,Dhaka,23.88658,90.62553,6,0,1
+FAC00037,Dhaka Union Health Centre 37,union_health_centre,Dhaka,Dhaka,23.94256,90.24058,15,0,1
+FAC00038,Dhaka Union Health Centre 38,union_health_centre,Dhaka,Dhaka,23.77593,90.31506,9,0,1
+FAC00039,Dhaka Community Clinic 39,community_clinic,Dhaka,Dhaka,23.94583,90.56913,3,0,1
+FAC00040,Dhaka Union Health Centre 40,union_health_centre,Dhaka,Dhaka,24.01666,90.6001,5,0,1
+FAC00041,Dhaka Upazila Health Complex 41,upazila_health_complex,Dhaka,Dhaka,23.68435,90.36896,61,5,1
+FAC00042,Dhaka Upazila Health Complex 42,upazila_health_complex,Dhaka,Dhaka,23.99797,90.53796,54,4,1
+FAC00043,Dhaka Union Health Centre 43,union_health_centre,Dhaka,Dhaka,23.65841,90.32305,20,0,1
+FAC00044,Dhaka Union Health Centre 44,union_health_centre,Dhaka,Dhaka,23.91941,90.21765,6,0,1
+FAC00045,Dhaka Union Health Centre 45,union_health_centre,Dhaka,Dhaka,23.61533,90.41594,10,0,1
+FAC00046,Dhaka Upazila Health Complex 46,upazila_health_complex,Dhaka,Dhaka,23.9695,90.37016,34,7,1
+FAC00047,Dhaka Union Health Centre 47,union_health_centre,Dhaka,Dhaka,23.86283,90.37696,6,0,1
+FAC00048,Dhaka Union Health Centre 48,union_health_centre,Dhaka,Dhaka,23.68017,90.50762,13,0,1
+FAC00049,Dhaka Upazila Health Complex 49,upazila_health_complex,Dhaka,Dhaka,23.7223,90.33162,72,7,1
+FAC00050,Dhaka Upazila Health Complex 50,upazila_health_complex,Dhaka,Dhaka,24.02962,90.63078,59,6,1
+FAC00051,Dhaka Upazila Health Complex 51,upazila_health_complex,Dhaka,Dhaka,24.00093,90.58008,46,3,1
+FAC00052,Dhaka Upazila Health Complex 52,upazila_health_complex,Dhaka,Dhaka,23.95715,90.50206,40,5,1
+FAC00053,Dhaka Community Clinic 53,community_clinic,Dhaka,Dhaka,23.82303,90.48636,5,0,1
+FAC00054,Dhaka Community Clinic 54,community_clinic,Dhaka,Dhaka,24.00343,90.25159,0,0,1
+FAC00055,Dhaka Upazila Health Complex 55,upazila_health_complex,Dhaka,Dhaka,23.71013,90.45863,65,3,1
+FAC00056,Dhaka Upazila Health Complex 56,upazila_health_complex,Dhaka,Dhaka,23.70645,90.40745,70,8,1
+FAC00057,Dhaka Private Clinic 57,private_clinic,Dhaka,Dhaka,23.77667,90.31424,21,12,0
+FAC00058,Dhaka Private Clinic 58,private_clinic,Dhaka,Dhaka,23.6614,90.38691,91,6,1
+FAC00059,Dhaka Union Health Centre 59,union_health_centre,Dhaka,Dhaka,23.62341,90.58107,8,0,1
+FAC00060,Gazipur Union Health Centre 60,union_health_centre,Gazipur,Dhaka,24.0357,90.25736,16,0,1
+FAC00061,Gazipur Upazila Health Complex 61,upazila_health_complex,Gazipur,Dhaka,23.79695,90.34964,80,8,1
+FAC00062,Gazipur Union Health Centre 62,union_health_centre,Gazipur,Dhaka,24.12265,90.58122,16,0,1
+FAC00063,Gazipur Union Health Centre 63,union_health_centre,Gazipur,Dhaka,24.18674,90.29636,9,0,1
+FAC00064,Gazipur Private Clinic 64,private_clinic,Gazipur,Dhaka,23.79031,90.51629,32,8,1
+FAC00065,Gazipur Community Clinic 65,community_clinic,Gazipur,Dhaka,24.15959,90.54893,5,0,1
+FAC00066,Gazipur Private Clinic 66,private_clinic,Gazipur,Dhaka,24.16315,90.56998,23,8,1
+FAC00067,Gazipur Private Clinic 67,private_clinic,Gazipur,Dhaka,23.91368,90.54215,68,7,1
+FAC00068,Gazipur District Hospital 68,district_hospital,Gazipur,Dhaka,23.92384,90.57252,398,32,1
+FAC00069,Gazipur Upazila Health Complex 69,upazila_health_complex,Gazipur,Dhaka,23.95526,90.62391,71,6,1
+FAC00070,Gazipur Community Clinic 70,community_clinic,Gazipur,Dhaka,24.1653,90.30713,0,0,1
+FAC00071,Gazipur Community Clinic 71,community_clinic,Gazipur,Dhaka,23.8271,90.38341,0,0,1
+FAC00072,Gazipur Upazila Health Complex 72,upazila_health_complex,Gazipur,Dhaka,23.83028,90.58798,68,6,1
+FAC00073,Gazipur District Hospital 73,district_hospital,Gazipur,Dhaka,24.00816,90.54706,523,20,1
+FAC00074,Gazipur Community Clinic 74,community_clinic,Gazipur,Dhaka,24.07448,90.35246,5,0,1
+FAC00075,Gazipur Union Health Centre 75,union_health_centre,Gazipur,Dhaka,24.05359,90.48409,15,0,1
+FAC00076,Gazipur Community Clinic 76,community_clinic,Gazipur,Dhaka,23.91549,90.37189,4,0,1
+FAC00077,Gazipur Upazila Health Complex 77,upazila_health_complex,Gazipur,Dhaka,23.9644,90.60596,38,3,1
+FAC00078,Narayanganj Community Clinic 78,community_clinic,Narayanganj,Dhaka,23.65421,90.45817,4,0,1
+FAC00079,Narayanganj Upazila Health Complex 79,upazila_health_complex,Narayanganj,Dhaka,23.74953,90.54643,43,5,1
+FAC00080,Narayanganj Union Health Centre 80,union_health_centre,Narayanganj,Dhaka,23.62872,90.62874,11,0,1
+FAC00081,Narayanganj Private Clinic 81,private_clinic,Narayanganj,Dhaka,23.52867,90.5716,94,3,1
+FAC00082,Narayanganj Upazila Health Complex 82,upazila_health_complex,Narayanganj,Dhaka,23.69983,90.37834,78,3,1
+FAC00083,Narayanganj District Hospital 83,district_hospital,Narayanganj,Dhaka,23.67276,90.61764,425,35,1
+FAC00084,Narayanganj Private Clinic 84,private_clinic,Narayanganj,Dhaka,23.71987,90.44845,83,5,1
+FAC00085,Narayanganj Upazila Health Complex 85,upazila_health_complex,Narayanganj,Dhaka,23.79657,90.65809,74,2,1
+FAC00086,Narayanganj Private Clinic 86,private_clinic,Narayanganj,Dhaka,23.75761,90.5857,38,4,1
+FAC00087,Narayanganj Union Health Centre 87,union_health_centre,Narayanganj,Dhaka,23.60464,90.63212,8,0,1
+FAC00088,Narayanganj Community Clinic 88,community_clinic,Narayanganj,Dhaka,23.54341,90.61181,4,0,1
+FAC00089,Narayanganj Private Clinic 89,private_clinic,Narayanganj,Dhaka,23.76925,90.52056,74,8,1
+FAC00090,Narsingdi Private Clinic 90,private_clinic,Narsingdi,Dhaka,23.82224,90.60439,70,9,1
+FAC00091,Narsingdi Private Clinic 91,private_clinic,Narsingdi,Dhaka,23.98397,90.61642,76,9,1
+FAC00092,Narsingdi Upazila Health Complex 92,upazila_health_complex,Narsingdi,Dhaka,23.84887,90.73327,47,4,1
+FAC00093,Narsingdi Upazila Health Complex 93,upazila_health_complex,Narsingdi,Dhaka,24.01902,90.52386,74,3,1
+FAC00094,Narsingdi Union Health Centre 94,union_health_centre,Narsingdi,Dhaka,23.7356,90.86207,18,0,1
+FAC00095,Narsingdi Private Clinic 95,private_clinic,Narsingdi,Dhaka,24.08516,90.83246,99,2,1
+FAC00096,Narsingdi District Hospital 96,district_hospital,Narsingdi,Dhaka,24.03973,90.87112,480,29,1
+FAC00097,Narsingdi Union Health Centre 97,union_health_centre,Narsingdi,Dhaka,23.92302,90.61569,12,0,1
+FAC00098,Narsingdi Upazila Health Complex 98,upazila_health_complex,Narsingdi,Dhaka,24.05938,90.81424,72,7,1
+FAC00099,Narsingdi Community Clinic 99,community_clinic,Narsingdi,Dhaka,23.94321,90.89465,4,0,1
+FAC00100,Manikganj Union Health Centre 100,union_health_centre,Manikganj,Dhaka,23.92571,89.85371,7,0,1
+FAC00101,Manikganj Upazila Health Complex 101,upazila_health_complex,Manikganj,Dhaka,23.73603,89.93781,54,4,1
+FAC00102,Manikganj Upazila Health Complex 102,upazila_health_complex,Manikganj,Dhaka,23.82839,90.16136,78,8,1
+FAC00103,Manikganj Private Clinic 103,private_clinic,Manikganj,Dhaka,23.74156,89.82419,16,7,1
+FAC00104,Manikganj District Hospital 104,district_hospital,Manikganj,Dhaka,23.7517,90.16326,315,50,1
+FAC00105,Manikganj Upazila Health Complex 105,upazila_health_complex,Manikganj,Dhaka,23.69323,90.21101,60,7,1
+FAC00106,Munshiganj Upazila Health Complex 106,upazila_health_complex,Munshiganj,Dhaka,23.58879,90.73504,53,3,1
+FAC00107,Munshiganj Private Clinic 107,private_clinic,Munshiganj,Dhaka,23.36976,90.3223,30,6,1
+FAC00108,Munshiganj Union Health Centre 108,union_health_centre,Munshiganj,Dhaka,23.49673,90.62561,17,0,1
+FAC00109,Munshiganj Union Health Centre 109,union_health_centre,Munshiganj,Dhaka,23.36704,90.65089,12,0,1
+FAC00110,Munshiganj Union Health Centre 110,union_health_centre,Munshiganj,Dhaka,23.67254,90.56001,8,0,1
+FAC00111,Munshiganj Union Health Centre 111,union_health_centre,Munshiganj,Dhaka,23.35254,90.59592,16,0,0
+FAC00112,Rajbari Union Health Centre 112,union_health_centre,Rajbari,Dhaka,23.58384,89.84675,20,0,1
+FAC00113,Rajbari Private Clinic 113,private_clinic,Rajbari,Dhaka,23.72901,89.74687,100,4,1
+FAC00114,Rajbari Upazila Health Complex 114,upazila_health_complex,Rajbari,Dhaka,23.75014,89.61565,64,8,1
+FAC00115,Rajbari Upazila Health Complex 115,upazila_health_complex,Rajbari,Dhaka,23.94863,89.54673,45,8,1
+FAC00116,Rajbari Private Clinic 116,private_clinic,Rajbari,Dhaka,23.8314,89.57201,82,11,1
+FAC00117,Rajbari Upazila Health Complex 117,upazila_health_complex,Rajbari,Dhaka,23.69352,89.53768,61,3,1
+FAC00118,Shariatpur Union Health Centre 118,union_health_centre,Shariatpur,Dhaka,23.26685,90.44222,13,0,1
+FAC00119,Shariatpur Upazila Health Complex 119,upazila_health_complex,Shariatpur,Dhaka,23.26658,90.32064,56,5,1
+FAC00120,Shariatpur Private Clinic 120,private_clinic,Shariatpur,Dhaka,23.02989,90.34436,67,14,1
+FAC00121,Shariatpur Upazila Health Complex 121,upazila_health_complex,Shariatpur,Dhaka,23.18467,90.45843,72,6,1
+FAC00122,Shariatpur Community Clinic 122,community_clinic,Shariatpur,Dhaka,23.16785,90.52416,4,0,1
+FAC00123,Shariatpur Upazila Health Complex 123,upazila_health_complex,Shariatpur,Dhaka,23.10704,90.2675,37,7,1
+FAC00124,Madaripur Private Clinic 124,private_clinic,Madaripur,Dhaka,23.03901,90.19245,33,5,1
+FAC00125,Madaripur Community Clinic 125,community_clinic,Madaripur,Dhaka,23.20639,90.41082,4,0,1
+FAC00126,Madaripur Upazila Health Complex 126,upazila_health_complex,Madaripur,Dhaka,23.0768,90.29093,53,3,1
+FAC00127,Madaripur District Hospital 127,district_hospital,Madaripur,Dhaka,23.07234,90.3948,327,37,1
+FAC00128,Madaripur Private Clinic 128,private_clinic,Madaripur,Dhaka,22.9492,90.10451,23,15,1
+FAC00129,Madaripur Upazila Health Complex 129,upazila_health_complex,Madaripur,Dhaka,23.35787,90.1896,33,4,1
+FAC00130,Gopalganj Union Health Centre 130,union_health_centre,Gopalganj,Dhaka,22.88729,89.90924,7,0,1
+FAC00131,Gopalganj Private Clinic 131,private_clinic,Gopalganj,Dhaka,23.07072,89.65932,48,3,1
+FAC00132,Gopalganj Union Health Centre 132,union_health_centre,Gopalganj,Dhaka,22.97471,89.77457,12,0,1
+FAC00133,Gopalganj Upazila Health Complex 133,upazila_health_complex,Gopalganj,Dhaka,22.76777,89.88045,67,5,1
+FAC00134,Gopalganj Private Clinic 134,private_clinic,Gopalganj,Dhaka,22.72625,89.89779,36,12,1
+FAC00135,Gopalganj Upazila Health Complex 135,upazila_health_complex,Gopalganj,Dhaka,22.63458,89.80542,34,3,1
+FAC00136,Faridpur Upazila Health Complex 136,upazila_health_complex,Faridpur,Dhaka,23.69806,89.93221,44,4,1
+FAC00137,Faridpur Union Health Centre 137,union_health_centre,Faridpur,Dhaka,23.73364,89.89793,13,0,1
+FAC00138,Faridpur Community Clinic 138,community_clinic,Faridpur,Dhaka,23.4375,89.72182,3,0,1
+FAC00139,Faridpur Upazila Health Complex 139,upazila_health_complex,Faridpur,Dhaka,23.41324,89.97166,39,2,1
+FAC00140,Faridpur Private Clinic 140,private_clinic,Faridpur,Dhaka,23.44172,89.92592,46,9,1
+FAC00141,Faridpur Community Clinic 141,community_clinic,Faridpur,Dhaka,23.62459,89.81551,4,0,1
+FAC00142,Faridpur Private Clinic 142,private_clinic,Faridpur,Dhaka,23.49716,89.66308,51,11,1
+FAC00143,Faridpur Private Clinic 143,private_clinic,Faridpur,Dhaka,23.80535,90.06271,83,11,1
+FAC00144,Kishoreganj Upazila Health Complex 144,upazila_health_complex,Kishoreganj,Dhaka,24.29716,90.96402,32,8,1
+FAC00145,Kishoreganj Community Clinic 145,community_clinic,Kishoreganj,Dhaka,24.40306,90.94879,1,0,1
+FAC00146,Kishoreganj Community Clinic 146,community_clinic,Kishoreganj,Dhaka,24.1175,90.90366,3,0,1
+FAC00147,Kishoreganj Private Clinic 147,private_clinic,Kishoreganj,Dhaka,24.26962,90.88382,52,8,1
+FAC00148,Kishoreganj Private Clinic 148,private_clinic,Kishoreganj,Dhaka,24.16452,90.89539,80,2,1
+FAC00149,Kishoreganj Community Clinic 149,community_clinic,Kishoreganj,Dhaka,24.34496,91.11997,3,0,0
+FAC00150,Kishoreganj Private Clinic 150,private_clinic,Kishoreganj,Dhaka,23.98825,90.98511,69,8,1
+FAC00151,Kishoreganj Union Health Centre 151,union_health_centre,Kishoreganj,Dhaka,24.2988,90.84657,19,0,1
+FAC00152,Kishoreganj Community Clinic 152,community_clinic,Kishoreganj,Dhaka,24.35197,90.97027,3,0,1
+FAC00153,Kishoreganj Union Health Centre 153,union_health_centre,Kishoreganj,Dhaka,24.2767,90.89373,12,0,0
+FAC00154,Kishoreganj Union Health Centre 154,union_health_centre,Kishoreganj,Dhaka,24.40099,91.15869,12,0,1
+FAC00155,Kishoreganj Upazila Health Complex 155,upazila_health_complex,Kishoreganj,Dhaka,24.37477,90.88542,39,5,1
+FAC00156,Kishoreganj Union Health Centre 156,union_health_centre,Kishoreganj,Dhaka,24.39571,90.86424,20,0,1
+FAC00157,Tangail Upazila Health Complex 157,upazila_health_complex,Tangail,Dhaka,24.35967,89.75676,68,6,1
+FAC00158,Tangail Private Clinic 158,private_clinic,Tangail,Dhaka,24.44237,89.9201,63,7,1
+FAC00159,Tangail Upazila Health Complex 159,upazila_health_complex,Tangail,Dhaka,24.28955,90.13622,49,8,1
+FAC00160,Tangail Upazila Health Complex 160,upazila_health_complex,Tangail,Dhaka,24.18315,89.93954,64,5,1
+FAC00161,Tangail Union Health Centre 161,union_health_centre,Tangail,Dhaka,24.41392,90.12824,15,0,1
+FAC00162,Tangail Upazila Health Complex 162,upazila_health_complex,Tangail,Dhaka,24.0505,90.02437,79,5,1
+FAC00163,Tangail Private Clinic 163,private_clinic,Tangail,Dhaka,24.37995,89.98359,59,12,1
+FAC00164,Tangail Community Clinic 164,community_clinic,Tangail,Dhaka,24.25231,89.95638,1,0,1
+FAC00165,Tangail Private Clinic 165,private_clinic,Tangail,Dhaka,24.26272,89.89775,66,3,1
+FAC00166,Tangail Union Health Centre 166,union_health_centre,Tangail,Dhaka,24.06422,90.04057,9,0,1
+FAC00167,Tangail Union Health Centre 167,union_health_centre,Tangail,Dhaka,24.31723,90.07148,17,0,1
+FAC00168,Tangail Private Clinic 168,private_clinic,Tangail,Dhaka,24.30709,90.08717,58,7,1
+FAC00169,Tangail Union Health Centre 169,union_health_centre,Tangail,Dhaka,24.1346,89.99784,7,0,1
+FAC00170,Tangail Upazila Health Complex 170,upazila_health_complex,Tangail,Dhaka,24.46177,90.03126,35,5,1
+FAC00171,Tangail Upazila Health Complex 171,upazila_health_complex,Tangail,Dhaka,24.16307,89.70944,40,7,1
+FAC00172,Jamalpur Upazila Health Complex 172,upazila_health_complex,Jamalpur,Mymensingh,24.8695,89.83525,52,4,1
+FAC00173,Jamalpur Union Health Centre 173,union_health_centre,Jamalpur,Mymensingh,24.75479,89.76255,10,0,1
+FAC00174,Jamalpur Union Health Centre 174,union_health_centre,Jamalpur,Mymensingh,24.89897,89.98439,12,0,1
+FAC00175,Jamalpur Union Health Centre 175,union_health_centre,Jamalpur,Mymensingh,24.79234,89.73193,19,0,1
+FAC00176,Jamalpur Community Clinic 176,community_clinic,Jamalpur,Mymensingh,24.9205,89.7603,5,0,1
+FAC00177,Jamalpur Community Clinic 177,community_clinic,Jamalpur,Mymensingh,24.96113,89.9145,2,0,1
+FAC00178,Jamalpur Private Clinic 178,private_clinic,Jamalpur,Mymensingh,25.05547,89.77473,35,8,1
+FAC00179,Jamalpur Upazila Health Complex 179,upazila_health_complex,Jamalpur,Mymensingh,24.8099,90.1581,48,7,1
+FAC00180,Jamalpur Upazila Health Complex 180,upazila_health_complex,Jamalpur,Mymensingh,24.98175,90.05545,66,8,1
+FAC00181,Jamalpur Union Health Centre 181,union_health_centre,Jamalpur,Mymensingh,25.04645,90.12509,20,0,1
+FAC00182,Jamalpur Upazila Health Complex 182,upazila_health_complex,Jamalpur,Mymensingh,24.96011,90.00099,52,3,1
+FAC00183,Sherpur Private Clinic 183,private_clinic,Sherpur,Mymensingh,25.16927,90.07163,94,12,1
+FAC00184,Sherpur Union Health Centre 184,union_health_centre,Sherpur,Mymensingh,25.14739,89.80988,14,0,1
+FAC00185,Sherpur Upazila Health Complex 185,upazila_health_complex,Sherpur,Mymensingh,25.12929,89.87248,48,4,1
+FAC00186,Sherpur Union Health Centre 186,union_health_centre,Sherpur,Mymensingh,25.03398,90.19713,16,0,1
+FAC00187,Sherpur Upazila Health Complex 187,upazila_health_complex,Sherpur,Mymensingh,24.93026,90.17817,60,8,1
+FAC00188,Sherpur Union Health Centre 188,union_health_centre,Sherpur,Mymensingh,24.86233,90.22046,7,0,1
+FAC00189,Mymensingh Private Clinic 189,private_clinic,Mymensingh,Mymensingh,24.88112,90.36124,60,15,1
+FAC00190,Mymensingh District Hospital 190,district_hospital,Mymensingh,Mymensingh,24.72721,90.49634,574,23,1
+FAC00191,Mymensingh Union Health Centre 191,union_health_centre,Mymensingh,Mymensingh,24.57477,90.30318,16,0,1
+FAC00192,Mymensingh Private Clinic 192,private_clinic,Mymensingh,Mymensingh,24.92981,90.2977,81,7,1
+FAC00193,Mymensingh Private Clinic 193,private_clinic,Mymensingh,Mymensingh,24.81277,90.25164,99,6,1
+FAC00194,Mymensingh District Hospital 194,district_hospital,Mymensingh,Mymensingh,24.56986,90.59069,552,23,1
+FAC00195,Mymensingh Union Health Centre 195,union_health_centre,Mymensingh,Mymensingh,24.78553,90.52,18,0,1
+FAC00196,Mymensingh Union Health Centre 196,union_health_centre,Mymensingh,Mymensingh,24.79799,90.61348,20,0,1
+FAC00197,Mymensingh Union Health Centre 197,union_health_centre,Mymensingh,Mymensingh,24.72219,90.61854,11,0,1
+FAC00198,Mymensingh Upazila Health Complex 198,upazila_health_complex,Mymensingh,Mymensingh,24.76666,90.63055,73,4,1
+FAC00199,Mymensingh Upazila Health Complex 199,upazila_health_complex,Mymensingh,Mymensingh,24.94466,90.56294,42,2,1
+FAC00200,Mymensingh Upazila Health Complex 200,upazila_health_complex,Mymensingh,Mymensingh,24.95438,90.22255,70,6,1
+FAC00201,Mymensingh Community Clinic 201,community_clinic,Mymensingh,Mymensingh,24.61739,90.56542,4,0,1
+FAC00202,Mymensingh Union Health Centre 202,union_health_centre,Mymensingh,Mymensingh,24.67167,90.26522,12,0,1
+FAC00203,Mymensingh District Hospital 203,district_hospital,Mymensingh,Mymensingh,24.76479,90.55165,374,24,1
+FAC00204,Mymensingh Private Clinic 204,private_clinic,Mymensingh,Mymensingh,24.68473,90.54721,26,2,1
+FAC00205,Mymensingh District Hospital 205,district_hospital,Mymensingh,Mymensingh,24.58287,90.38552,435,21,1
+FAC00206,Mymensingh Upazila Health Complex 206,upazila_health_complex,Mymensingh,Mymensingh,24.6864,90.46151,58,8,1
+FAC00207,Mymensingh Upazila Health Complex 207,upazila_health_complex,Mymensingh,Mymensingh,24.84709,90.60015,69,2,1
+FAC00208,Mymensingh Upazila Health Complex 208,upazila_health_complex,Mymensingh,Mymensingh,24.55386,90.41105,71,2,1
+FAC00209,Mymensingh Union Health Centre 209,union_health_centre,Mymensingh,Mymensingh,24.84056,90.39547,20,0,1
+FAC00210,Mymensingh Upazila Health Complex 210,upazila_health_complex,Mymensingh,Mymensingh,24.58262,90.475,39,2,1
+FAC00211,Mymensingh Private Clinic 211,private_clinic,Mymensingh,Mymensingh,24.76055,90.39993,58,11,1
+FAC00212,Netrokona Upazila Health Complex 212,upazila_health_complex,Netrokona,Mymensingh,25.02553,90.7943,74,2,1
+FAC00213,Netrokona Private Clinic 213,private_clinic,Netrokona,Mymensingh,24.84898,90.60844,37,8,1
+FAC00214,Netrokona Union Health Centre 214,union_health_centre,Netrokona,Mymensingh,24.97133,90.64542,18,0,1
+FAC00215,Netrokona Upazila Health Complex 215,upazila_health_complex,Netrokona,Mymensingh,25.05641,90.53744,39,7,1
+FAC00216,Netrokona Upazila Health Complex 216,upazila_health_complex,Netrokona,Mymensingh,24.97537,90.86508,36,7,1
+FAC00217,Netrokona Union Health Centre 217,union_health_centre,Netrokona,Mymensingh,24.94511,90.68866,15,0,1
+FAC00218,Netrokona Community Clinic 218,community_clinic,Netrokona,Mymensingh,25.03226,90.82517,3,0,1
+FAC00219,Netrokona Union Health Centre 219,union_health_centre,Netrokona,Mymensingh,24.69588,90.73116,16,0,1
+FAC00220,Netrokona Union Health Centre 220,union_health_centre,Netrokona,Mymensingh,24.80435,90.75266,8,0,1
+FAC00221,Chittagong Upazila Health Complex 221,upazila_health_complex,Chittagong,Chittagong,22.32571,91.81002,44,8,1
+FAC00222,Chittagong Union Health Centre 222,union_health_centre,Chittagong,Chittagong,22.40486,91.85265,5,0,1
+FAC00223,Chittagong District Hospital 223,district_hospital,Chittagong,Chittagong,22.47236,91.96868,439,42,1
+FAC00224,Chittagong Upazila Health Complex 224,upazila_health_complex,Chittagong,Chittagong,22.42613,91.59382,39,6,1
+FAC00225,Chittagong Community Clinic 225,community_clinic,Chittagong,Chittagong,22.46519,91.65786,0,0,1
+FAC00226,Chittagong Upazila Health Complex 226,upazila_health_complex,Chittagong,Chittagong,22.4544,91.90501,53,4,1
+FAC00227,Chittagong Upazila Health Complex 227,upazila_health_complex,Chittagong,Chittagong,22.20616,91.83505,33,3,1
+FAC00228,Chittagong Upazila Health Complex 228,upazila_health_complex,Chittagong,Chittagong,22.35059,91.7577,72,5,1
+FAC00229,Chittagong Private Clinic 229,private_clinic,Chittagong,Chittagong,22.32606,91.68783,24,7,1
+FAC00230,Chittagong Union Health Centre 230,union_health_centre,Chittagong,Chittagong,22.15688,91.73712,14,0,1
+FAC00231,Chittagong District Hospital 231,district_hospital,Chittagong,Chittagong,22.22984,91.62358,454,50,1
+FAC00232,Chittagong Upazila Health Complex 232,upazila_health_complex,Chittagong,Chittagong,22.46559,91.64051,30,5,1
+FAC00233,Chittagong Private Clinic 233,private_clinic,Chittagong,Chittagong,22.50358,91.91793,74,10,1
+FAC00234,Chittagong Private Clinic 234,private_clinic,Chittagong,Chittagong,22.14515,91.96851,15,8,1
+FAC00235,Chittagong Union Health Centre 235,union_health_centre,Chittagong,Chittagong,22.44908,91.74699,17,0,1
+FAC00236,Chittagong District Hospital 236,district_hospital,Chittagong,Chittagong,22.48948,91.83518,466,25,1
+FAC00237,Chittagong Community Clinic 237,community_clinic,Chittagong,Chittagong,22.32905,91.60978,0,0,1
+FAC00238,Chittagong Union Health Centre 238,union_health_centre,Chittagong,Chittagong,22.31104,91.69972,7,0,1
+FAC00239,Chittagong Upazila Health Complex 239,upazila_health_complex,Chittagong,Chittagong,22.36151,91.61337,40,2,1
+FAC00240,Chittagong Community Clinic 240,community_clinic,Chittagong,Chittagong,22.29138,91.98482,2,0,1
+FAC00241,Chittagong Upazila Health Complex 241,upazila_health_complex,Chittagong,Chittagong,22.24953,91.63954,36,3,1
+FAC00242,Chittagong Private Clinic 242,private_clinic,Chittagong,Chittagong,22.55547,91.8395,19,4,1
+FAC00243,Chittagong Union Health Centre 243,union_health_centre,Chittagong,Chittagong,22.4366,91.9513,19,0,1
+FAC00244,Chittagong Community Clinic 244,community_clinic,Chittagong,Chittagong,22.51717,91.83918,2,0,1
+FAC00245,Chittagong Upazila Health Complex 245,upazila_health_complex,Chittagong,Chittagong,22.27014,91.68406,58,7,1
+FAC00246,Chittagong Union Health Centre 246,union_health_centre,Chittagong,Chittagong,22.34007,91.57975,14,0,1
+FAC00247,Chittagong Upazila Health Complex 247,upazila_health_complex,Chittagong,Chittagong,22.56694,91.60293,71,8,1
+FAC00248,Chittagong Upazila Health Complex 248,upazila_health_complex,Chittagong,Chittagong,22.55676,91.88833,67,6,1
+FAC00249,Chittagong Community Clinic 249,community_clinic,Chittagong,Chittagong,22.42371,91.70467,4,0,1
+FAC00250,Chittagong Upazila Health Complex 250,upazila_health_complex,Chittagong,Chittagong,22.18244,91.95882,33,5,1
+FAC00251,Chittagong Private Clinic 251,private_clinic,Chittagong,Chittagong,22.21283,91.67221,74,12,1
+FAC00252,Chittagong Union Health Centre 252,union_health_centre,Chittagong,Chittagong,22.29702,91.96709,10,0,1
+FAC00253,Chittagong Private Clinic 253,private_clinic,Chittagong,Chittagong,22.15994,91.84079,96,11,1
+FAC00254,Chittagong Upazila Health Complex 254,upazila_health_complex,Chittagong,Chittagong,22.30699,91.67408,65,7,1
+FAC00255,Cox's Bazar Community Clinic 255,community_clinic,Cox's Bazar,Chittagong,21.59144,91.93248,4,0,1
+FAC00256,Cox's Bazar Upazila Health Complex 256,upazila_health_complex,Cox's Bazar,Chittagong,21.63299,92.09313,52,4,1
+FAC00257,Cox's Bazar Union Health Centre 257,union_health_centre,Cox's Bazar,Chittagong,21.34342,91.95154,7,0,1
+FAC00258,Cox's Bazar Private Clinic 258,private_clinic,Cox's Bazar,Chittagong,21.57194,92.11086,95,13,1
+FAC00259,Cox's Bazar Union Health Centre 259,union_health_centre,Cox's Bazar,Chittagong,21.43093,91.79382,18,0,1
+FAC00260,Cox's Bazar Community Clinic 260,community_clinic,Cox's Bazar,Chittagong,21.62417,91.99976,2,0,1
+FAC00261,Cox's Bazar Upazila Health Complex 261,upazila_health_complex,Cox's Bazar,Chittagong,21.57875,91.8303,34,4,1
+FAC00262,Cox's Bazar Private Clinic 262,private_clinic,Cox's Bazar,Chittagong,21.49845,92.17141,77,2,1
+FAC00263,Cox's Bazar Union Health Centre 263,union_health_centre,Cox's Bazar,Chittagong,21.27859,92.15159,9,0,1
+FAC00264,Cox's Bazar Private Clinic 264,private_clinic,Cox's Bazar,Chittagong,21.39978,91.96658,31,13,1
+FAC00265,Cox's Bazar Upazila Health Complex 265,upazila_health_complex,Cox's Bazar,Chittagong,21.33257,92.11516,58,6,1
+FAC00266,Feni Union Health Centre 266,union_health_centre,Feni,Chittagong,23.22016,91.52152,14,0,1
+FAC00267,Feni Upazila Health Complex 267,upazila_health_complex,Feni,Chittagong,23.22845,91.37954,73,6,1
+FAC00268,Feni Upazila Health Complex 268,upazila_health_complex,Feni,Chittagong,23.22046,91.53583,63,5,1
+FAC00269,Feni Upazila Health Complex 269,upazila_health_complex,Feni,Chittagong,23.07742,91.56101,46,2,1
+FAC00270,Feni Upazila Health Complex 270,upazila_health_complex,Feni,Chittagong,22.85016,91.21331,63,8,1
+FAC00271,Feni Union Health Centre 271,union_health_centre,Feni,Chittagong,23.16096,91.21675,9,0,1
+FAC00272,Feni Private Clinic 272,private_clinic,Feni,Chittagong,22.97785,91.35084,54,2,1
+FAC00273,Brahmanbaria Upazila Health Complex 273,upazila_health_complex,Brahmanbaria,Chittagong,23.8396,91.03172,35,4,1
+FAC00274,Brahmanbaria Private Clinic 274,private_clinic,Brahmanbaria,Chittagong,23.80506,90.90835,52,14,1
+FAC00275,Brahmanbaria Union Health Centre 275,union_health_centre,Brahmanbaria,Chittagong,24.07469,91.09791,9,0,1
+FAC00276,Brahmanbaria Community Clinic 276,community_clinic,Brahmanbaria,Chittagong,23.85341,91.25888,0,0,1
+FAC00277,Brahmanbaria Private Clinic 277,private_clinic,Brahmanbaria,Chittagong,23.78972,91.01826,77,8,1
+FAC00278,Brahmanbaria District Hospital 278,district_hospital,Brahmanbaria,Chittagong,24.09012,91.09263,514,40,1
+FAC00279,Brahmanbaria Community Clinic 279,community_clinic,Brahmanbaria,Chittagong,23.97666,91.16956,4,0,1
+FAC00280,Brahmanbaria Private Clinic 280,private_clinic,Brahmanbaria,Chittagong,23.74149,91.04674,47,8,1
+FAC00281,Brahmanbaria Upazila Health Complex 281,upazila_health_complex,Brahmanbaria,Chittagong,23.97113,91.05017,72,2,1
+FAC00282,Brahmanbaria Union Health Centre 282,union_health_centre,Brahmanbaria,Chittagong,23.9126,91.09836,5,0,1
+FAC00283,Brahmanbaria Community Clinic 283,community_clinic,Brahmanbaria,Chittagong,24.06962,91.04862,2,0,1
+FAC00284,Brahmanbaria Upazila Health Complex 284,upazila_health_complex,Brahmanbaria,Chittagong,23.78641,91.14754,72,7,1
+FAC00285,Brahmanbaria Upazila Health Complex 285,upazila_health_complex,Brahmanbaria,Chittagong,23.88976,91.17433,52,6,1
+FAC00286,Brahmanbaria Union Health Centre 286,union_health_centre,Brahmanbaria,Chittagong,24.01876,91.24856,20,0,1
+FAC00287,Comilla Private Clinic 287,private_clinic,Comilla,Chittagong,23.36981,90.98017,68,2,1
+FAC00288,Comilla District Hospital 288,district_hospital,Comilla,Chittagong,23.41592,91.31968,458,36,1
+FAC00289,Comilla District Hospital 289,district_hospital,Comilla,Chittagong,23.39777,91.30447,397,29,1
+FAC00290,Comilla Upazila Health Complex 290,upazila_health_complex,Comilla,Chittagong,23.40263,91.35227,37,8,1
+FAC00291,Comilla Private Clinic 291,private_clinic,Comilla,Chittagong,23.66914,91.17923,59,7,1
+FAC00292,Comilla Community Clinic 292,community_clinic,Comilla,Chittagong,23.35806,90.99725,4,0,1
+FAC00293,Comilla Union Health Centre 293,union_health_centre,Comilla,Chittagong,23.48071,91.10223,10,0,1
+FAC00294,Comilla Union Health Centre 294,union_health_centre,Comilla,Chittagong,23.4369,91.27667,14,0,1
+FAC00295,Comilla Union Health Centre 295,union_health_centre,Comilla,Chittagong,23.25934,91.34372,19,0,1
+FAC00296,Comilla Community Clinic 296,community_clinic,Comilla,Chittagong,23.52207,91.30915,2,0,1
+FAC00297,Comilla Union Health Centre 297,union_health_centre,Comilla,Chittagong,23.40056,91.31338,17,0,1
+FAC00298,Comilla Community Clinic 298,community_clinic,Comilla,Chittagong,23.61411,91.25926,1,0,1
+FAC00299,Comilla Upazila Health Complex 299,upazila_health_complex,Comilla,Chittagong,23.52457,91.12025,45,8,1
+FAC00300,Comilla District Hospital 300,district_hospital,Comilla,Chittagong,23.43867,91.12412,378,41,1
+FAC00301,Comilla Upazila Health Complex 301,upazila_health_complex,Comilla,Chittagong,23.40216,91.09923,38,6,1
+FAC00302,Comilla Community Clinic 302,community_clinic,Comilla,Chittagong,23.5644,91.18048,0,0,1
+FAC00303,Comilla Union Health Centre 303,union_health_centre,Comilla,Chittagong,23.58168,91.27068,13,0,1
+FAC00304,Comilla Union Health Centre 304,union_health_centre,Comilla,Chittagong,23.32878,91.02062,20,0,1
+FAC00305,Comilla Upazila Health Complex 305,upazila_health_complex,Comilla,Chittagong,23.6795,91.31753,75,5,1
+FAC00306,Comilla Community Clinic 306,community_clinic,Comilla,Chittagong,23.39357,90.98947,5,0,1
+FAC00307,Comilla Private Clinic 307,private_clinic,Comilla,Chittagong,23.55291,91.269,30,13,1
+FAC00308,Comilla Upazila Health Complex 308,upazila_health_complex,Comilla,Chittagong,23.67416,91.30941,44,2,1
+FAC00309,Comilla Union Health Centre 309,union_health_centre,Comilla,Chittagong,23.48447,91.12322,16,0,1
+FAC00310,Comilla Union Health Centre 310,union_health_centre,Comilla,Chittagong,23.26963,91.13609,7,0,1
+FAC00311,Comilla Union Health Centre 311,union_health_centre,Comilla,Chittagong,23.57913,91.32317,18,0,1
+FAC00312,Chandpur Community Clinic 312,community_clinic,Chandpur,Chittagong,23.03593,90.63667,5,0,1
+FAC00313,Chandpur Upazila Health Complex 313,upazila_health_complex,Chandpur,Chittagong,23.28481,90.51176,79,6,1
+FAC00314,Chandpur Union Health Centre 314,union_health_centre,Chandpur,Chittagong,23.36911,90.65966,6,0,1
+FAC00315,Chandpur Upazila Health Complex 315,upazila_health_complex,Chandpur,Chittagong,23.15555,90.8457,75,3,1
+FAC00316,Chandpur Private Clinic 316,private_clinic,Chandpur,Chittagong,23.28273,90.67407,42,5,1
+FAC00317,Chandpur Upazila Health Complex 317,upazila_health_complex,Chandpur,Chittagong,23.22443,90.5059,64,2,1
+FAC00318,Chandpur Upazila Health Complex 318,upazila_health_complex,Chandpur,Chittagong,23.32038,90.69796,72,6,1
+FAC00319,Chandpur Union Health Centre 319,union_health_centre,Chandpur,Chittagong,23.03904,90.84906,5,0,1
+FAC00320,Chandpur Upazila Health Complex 320,upazila_health_complex,Chandpur,Chittagong,23.25504,90.70367,43,8,1
+FAC00321,Chandpur Private Clinic 321,private_clinic,Chandpur,Chittagong,23.28574,90.56462,79,6,1
+FAC00322,Lakshmipur Private Clinic 322,private_clinic,Lakshmipur,Chittagong,22.92176,90.91189,61,6,1
+FAC00323,Lakshmipur Union Health Centre 323,union_health_centre,Lakshmipur,Chittagong,22.81197,90.87583,19,0,1
+FAC00324,Lakshmipur Private Clinic 324,private_clinic,Lakshmipur,Chittagong,22.77974,90.77194,54,8,1
+FAC00325,Lakshmipur Upazila Health Complex 325,upazila_health_complex,Lakshmipur,Chittagong,22.83989,90.71798,59,2,1
+FAC00326,Lakshmipur Upazila Health Complex 326,upazila_health_complex,Lakshmipur,Chittagong,22.99297,90.71814,54,8,1
+FAC00327,Lakshmipur Upazila Health Complex 327,upazila_health_complex,Lakshmipur,Chittagong,23.0395,90.69243,50,6,1
+FAC00328,Lakshmipur Community Clinic 328,community_clinic,Lakshmipur,Chittagong,22.94165,90.74466,3,0,1
+FAC00329,Lakshmipur Community Clinic 329,community_clinic,Lakshmipur,Chittagong,22.92338,90.71482,4,0,1
+FAC00330,Noakhali District Hospital 330,district_hospital,Noakhali,Chittagong,22.91251,91.25045,444,35,1
+FAC00331,Noakhali Upazila Health Complex 331,upazila_health_complex,Noakhali,Chittagong,22.6969,90.93853,30,8,1
+FAC00332,Noakhali Upazila Health Complex 332,upazila_health_complex,Noakhali,Chittagong,22.66951,90.90211,55,4,1
+FAC00333,Noakhali Upazila Health Complex 333,upazila_health_complex,Noakhali,Chittagong,22.81959,91.07776,48,2,1
+FAC00334,Noakhali Private Clinic 334,private_clinic,Noakhali,Chittagong,22.91846,90.93621,89,12,1
+FAC00335,Noakhali Upazila Health Complex 335,upazila_health_complex,Noakhali,Chittagong,23.06274,91.21178,51,6,1
+FAC00336,Noakhali Union Health Centre 336,union_health_centre,Noakhali,Chittagong,22.66953,90.9399,6,0,1
+FAC00337,Noakhali Union Health Centre 337,union_health_centre,Noakhali,Chittagong,22.71513,91.27258,19,0,1
+FAC00338,Noakhali Community Clinic 338,community_clinic,Noakhali,Chittagong,22.7211,91.31547,2,0,1
+FAC00339,Noakhali Upazila Health Complex 339,upazila_health_complex,Noakhali,Chittagong,23.01405,91.11383,51,6,1
+FAC00340,Noakhali Upazila Health Complex 340,upazila_health_complex,Noakhali,Chittagong,22.79535,90.92783,31,4,1
+FAC00341,Noakhali Upazila Health Complex 341,upazila_health_complex,Noakhali,Chittagong,22.95234,90.89132,76,8,1
+FAC00342,Noakhali Community Clinic 342,community_clinic,Noakhali,Chittagong,22.90376,91.19702,4,0,1
+FAC00343,Noakhali Upazila Health Complex 343,upazila_health_complex,Noakhali,Chittagong,22.92228,91.24971,70,7,1
+FAC00344,Noakhali Union Health Centre 344,union_health_centre,Noakhali,Chittagong,22.90153,91.18783,6,0,1
+FAC00345,Khagrachhari Union Health Centre 345,union_health_centre,Khagrachhari,Chittagong,22.96593,92.06862,18,0,1
+FAC00346,Khagrachhari Private Clinic 346,private_clinic,Khagrachhari,Chittagong,23.27259,92.08486,70,15,1
+FAC00347,Khagrachhari Union Health Centre 347,union_health_centre,Khagrachhari,Chittagong,23.33847,91.97528,15,0,1
+FAC00348,Khagrachhari Community Clinic 348,community_clinic,Khagrachhari,Chittagong,23.30063,91.91542,3,0,1
+FAC00349,Khagrachhari Private Clinic 349,private_clinic,Khagrachhari,Chittagong,23.25291,91.88112,97,12,1
+FAC00350,Khagrachhari Community Clinic 350,community_clinic,Khagrachhari,Chittagong,23.14486,91.86374,2,0,1
+FAC00351,Rangamati Upazila Health Complex 351,upazila_health_complex,Rangamati,Chittagong,22.5264,92.28899,48,7,1
+FAC00352,Rangamati Upazila Health Complex 352,upazila_health_complex,Rangamati,Chittagong,22.55552,92.03242,80,7,1
+FAC00353,Rangamati Upazila Health Complex 353,upazila_health_complex,Rangamati,Chittagong,22.58706,92.31895,55,8,1
+FAC00354,Rangamati District Hospital 354,district_hospital,Rangamati,Chittagong,22.84176,92.26743,340,31,1
+FAC00355,Rangamati Upazila Health Complex 355,upazila_health_complex,Rangamati,Chittagong,22.84573,92.28512,64,4,1
+FAC00356,Rangamati Union Health Centre 356,union_health_centre,Rangamati,Chittagong,22.54188,92.27353,12,0,1
+FAC00357,Bandarban Union Health Centre 357,union_health_centre,Bandarban,Chittagong,22.01939,92.14373,6,0,1
+FAC00358,Bandarban Union Health Centre 358,union_health_centre,Bandarban,Chittagong,21.97758,92.24056,9,0,1
+FAC00359,Bandarban Union Health Centre 359,union_health_centre,Bandarban,Chittagong,22.18538,92.08616,20,0,1
+FAC00360,Bandarban Upazila Health Complex 360,upazila_health_complex,Bandarban,Chittagong,22.37479,92.03776,71,2,1
+FAC00361,Bandarban Union Health Centre 361,union_health_centre,Bandarban,Chittagong,22.37712,92.07543,6,0,1
+FAC00362,Bandarban Upazila Health Complex 362,upazila_health_complex,Bandarban,Chittagong,22.14998,92.21637,32,8,1
+FAC00363,Sylhet Community Clinic 363,community_clinic,Sylhet,Sylhet,25.06067,91.65278,2,0,1
+FAC00364,Sylhet Upazila Health Complex 364,upazila_health_complex,Sylhet,Sylhet,24.87481,91.93088,51,4,1
+FAC00365,Sylhet Private Clinic 365,private_clinic,Sylhet,Sylhet,24.89675,91.76875,27,15,1
+FAC00366,Sylhet Upazila Health Complex 366,upazila_health_complex,Sylhet,Sylhet,24.96015,91.96488,76,5,0
+FAC00367,Sylhet Upazila Health Complex 367,upazila_health_complex,Sylhet,Sylhet,24.97164,91.73369,48,6,1
+FAC00368,Sylhet Union Health Centre 368,union_health_centre,Sylhet,Sylhet,25.03878,91.87542,17,0,1
+FAC00369,Sylhet Union Health Centre 369,union_health_centre,Sylhet,Sylhet,25.10684,91.85878,10,0,1
+FAC00370,Sylhet District Hospital 370,district_hospital,Sylhet,Sylhet,24.87146,91.76618,496,27,1
+FAC00371,Sylhet Union Health Centre 371,union_health_centre,Sylhet,Sylhet,24.78998,91.8069,5,0,1
+FAC00372,Sylhet Union Health Centre 372,union_health_centre,Sylhet,Sylhet,24.80989,91.82708,19,0,1
+FAC00373,Sylhet Private Clinic 373,private_clinic,Sylhet,Sylhet,24.81173,91.70036,100,14,1
+FAC00374,Sylhet Upazila Health Complex 374,upazila_health_complex,Sylhet,Sylhet,24.77132,91.70747,69,3,1
+FAC00375,Sylhet Private Clinic 375,private_clinic,Sylhet,Sylhet,24.85787,91.89036,87,7,1
+FAC00376,Sylhet Union Health Centre 376,union_health_centre,Sylhet,Sylhet,25.01012,91.94805,11,0,1
+FAC00377,Sylhet Private Clinic 377,private_clinic,Sylhet,Sylhet,24.9073,91.80789,77,9,1
+FAC00378,Sylhet Upazila Health Complex 378,upazila_health_complex,Sylhet,Sylhet,24.76385,91.88483,65,6,1
+FAC00379,Moulvibazar Private Clinic 379,private_clinic,Moulvibazar,Sylhet,24.56223,91.87284,66,3,1
+FAC00380,Moulvibazar Private Clinic 380,private_clinic,Moulvibazar,Sylhet,24.28738,91.61546,67,14,1
+FAC00381,Moulvibazar Union Health Centre 381,union_health_centre,Moulvibazar,Sylhet,24.55892,91.69299,19,0,1
+FAC00382,Moulvibazar Upazila Health Complex 382,upazila_health_complex,Moulvibazar,Sylhet,24.35878,91.58953,30,7,1
+FAC00383,Moulvibazar Private Clinic 383,private_clinic,Moulvibazar,Sylhet,24.67412,91.58777,79,2,1
+FAC00384,Moulvibazar District Hospital 384,district_hospital,Moulvibazar,Sylhet,24.60125,91.89436,509,25,1
+FAC00385,Moulvibazar Union Health Centre 385,union_health_centre,Moulvibazar,Sylhet,24.42766,91.94959,18,0,1
+FAC00386,Moulvibazar Community Clinic 386,community_clinic,Moulvibazar,Sylhet,24.42818,91.8578,3,0,1
+FAC00387,Moulvibazar Union Health Centre 387,union_health_centre,Moulvibazar,Sylhet,24.3151,91.99425,16,0,1
+FAC00388,Habiganj Upazila Health Complex 388,upazila_health_complex,Habiganj,Sylhet,24.15603,91.2056,44,8,1
+FAC00389,Habiganj Union Health Centre 389,union_health_centre,Habiganj,Sylhet,24.38855,91.55788,18,0,1
+FAC00390,Habiganj Upazila Health Complex 390,upazila_health_complex,Habiganj,Sylhet,24.56696,91.51461,47,3,1
+FAC00391,Habiganj Private Clinic 391,private_clinic,Habiganj,Sylhet,24.49156,91.58445,63,11,0
+FAC00392,Habiganj Upazila Health Complex 392,upazila_health_complex,Habiganj,Sylhet,24.16927,91.45863,36,6,1
+FAC00393,Habiganj District Hospital 393,district_hospital,Habiganj,Sylhet,24.34764,91.43309,322,32,1
+FAC00394,Habiganj Private Clinic 394,private_clinic,Habiganj,Sylhet,24.59163,91.29863,27,10,1
+FAC00395,Habiganj Union Health Centre 395,union_health_centre,Habiganj,Sylhet,24.25874,91.58115,15,0,1
+FAC00396,Habiganj Union Health Centre 396,union_health_centre,Habiganj,Sylhet,24.28672,91.22242,18,0,1
+FAC00397,Habiganj Private Clinic 397,private_clinic,Habiganj,Sylhet,24.45315,91.44017,32,12,1
+FAC00398,Sunamganj Upazila Health Complex 398,upazila_health_complex,Sunamganj,Sylhet,25.01351,91.40946,71,7,1
+FAC00399,Sunamganj Union Health Centre 399,union_health_centre,Sunamganj,Sylhet,25.01144,91.51064,14,0,1
+FAC00400,Sunamganj Private Clinic 400,private_clinic,Sunamganj,Sylhet,25.15713,91.53324,48,15,1
+FAC00401,Sunamganj Union Health Centre 401,union_health_centre,Sunamganj,Sylhet,25.09101,91.2377,18,0,1
+FAC00402,Sunamganj Upazila Health Complex 402,upazila_health_complex,Sunamganj,Sylhet,25.25158,91.55144,71,2,1
+FAC00403,Sunamganj Private Clinic 403,private_clinic,Sunamganj,Sylhet,24.96392,91.47512,34,2,1
+FAC00404,Sunamganj Private Clinic 404,private_clinic,Sunamganj,Sylhet,25.18095,91.49739,34,14,1
+FAC00405,Sunamganj Union Health Centre 405,union_health_centre,Sunamganj,Sylhet,24.9792,91.57866,15,0,1
+FAC00406,Sunamganj Upazila Health Complex 406,upazila_health_complex,Sunamganj,Sylhet,25.17443,91.51061,77,2,1
+FAC00407,Sunamganj Union Health Centre 407,union_health_centre,Sunamganj,Sylhet,25.02032,91.28401,11,0,1
+FAC00408,Sunamganj Upazila Health Complex 408,upazila_health_complex,Sunamganj,Sylhet,25.13124,91.31441,59,6,1
+FAC00409,Rajshahi Private Clinic 409,private_clinic,Rajshahi,Rajshahi,24.50774,88.70206,69,3,1
+FAC00410,Rajshahi Upazila Health Complex 410,upazila_health_complex,Rajshahi,Rajshahi,24.29219,88.40431,43,4,1
+FAC00411,Rajshahi Private Clinic 411,private_clinic,Rajshahi,Rajshahi,24.39796,88.64117,12,6,1
+FAC00412,Rajshahi Upazila Health Complex 412,upazila_health_complex,Rajshahi,Rajshahi,24.25571,88.63491,42,4,1
+FAC00413,Rajshahi Union Health Centre 413,union_health_centre,Rajshahi,Rajshahi,24.26772,88.7457,15,0,1
+FAC00414,Rajshahi Union Health Centre 414,union_health_centre,Rajshahi,Rajshahi,24.35726,88.70662,20,0,1
+FAC00415,Rajshahi Upazila Health Complex 415,upazila_health_complex,Rajshahi,Rajshahi,24.23548,88.77552,64,5,1
+FAC00416,Rajshahi Community Clinic 416,community_clinic,Rajshahi,Rajshahi,24.16938,88.75675,4,0,1
+FAC00417,Rajshahi Union Health Centre 417,union_health_centre,Rajshahi,Rajshahi,24.33595,88.75492,5,0,1
+FAC00418,Rajshahi Private Clinic 418,private_clinic,Rajshahi,Rajshahi,24.37702,88.54841,11,5,1
+FAC00419,Rajshahi Union Health Centre 419,union_health_centre,Rajshahi,Rajshahi,24.44459,88.39112,20,0,1
+FAC00420,Natore Union Health Centre 420,union_health_centre,Natore,Rajshahi,24.43324,88.90089,5,0,1
+FAC00421,Natore District Hospital 421,district_hospital,Natore,Rajshahi,24.61377,88.85888,520,45,1
+FAC00422,Natore Union Health Centre 422,union_health_centre,Natore,Rajshahi,24.28475,89.01164,12,0,1
+FAC00423,Natore Upazila Health Complex 423,upazila_health_complex,Natore,Rajshahi,24.36444,88.95865,55,2,1
+FAC00424,Natore Community Clinic 424,community_clinic,Natore,Rajshahi,24.33229,89.14435,1,0,1
+FAC00425,Natore Community Clinic 425,community_clinic,Natore,Rajshahi,24.53452,88.82114,5,0,1
+FAC00426,Natore Union Health Centre 426,union_health_centre,Natore,Rajshahi,24.48047,89.08925,6,0,1
+FAC00427,Natore Private Clinic 427,private_clinic,Natore,Rajshahi,24.34606,89.21002,92,14,1
+FAC00428,Naogaon Private Clinic 428,private_clinic,Naogaon,Rajshahi,24.68212,89.09327,15,5,1
+FAC00429,Naogaon Union Health Centre 429,union_health_centre,Naogaon,Rajshahi,24.99573,89.01245,6,0,1
+FAC00430,Naogaon Union Health Centre 430,union_health_centre,Naogaon,Rajshahi,24.66802,89.08549,6,0,0
+FAC00431,Naogaon Upazila Health Complex 431,upazila_health_complex,Naogaon,Rajshahi,24.9502,89.0725,39,8,1
+FAC00432,Naogaon Upazila Health Complex 432,upazila_health_complex,Naogaon,Rajshahi,24.83845,89.08505,66,3,1
+FAC00433,Naogaon Union Health Centre 433,union_health_centre,Naogaon,Rajshahi,24.92157,88.77288,17,0,1
+FAC00434,Naogaon Private Clinic 434,private_clinic,Naogaon,Rajshahi,25.0178,88.73493,74,13,1
+FAC00435,Naogaon Private Clinic 435,private_clinic,Naogaon,Rajshahi,24.92746,89.13144,53,11,1
+FAC00436,Naogaon Private Clinic 436,private_clinic,Naogaon,Rajshahi,24.70936,89.14804,13,12,1
+FAC00437,Naogaon Upazila Health Complex 437,upazila_health_complex,Naogaon,Rajshahi,24.67082,88.96909,54,5,1
+FAC00438,Naogaon Private Clinic 438,private_clinic,Naogaon,Rajshahi,24.69754,88.74364,47,14,1
+FAC00439,Naogaon Upazila Health Complex 439,upazila_health_complex,Naogaon,Rajshahi,24.65698,88.88273,80,7,1
+FAC00440,Naogaon Upazila Health Complex 440,upazila_health_complex,Naogaon,Rajshahi,24.74746,88.83,49,5,1
+FAC00441,Chapainawabganj Upazila Health Complex 441,upazila_health_complex,Chapainawabganj,Rajshahi,24.62079,88.23404,58,6,1
+FAC00442,Chapainawabganj Upazila Health Complex 442,upazila_health_complex,Chapainawabganj,Rajshahi,24.63984,88.19725,35,6,1
+FAC00443,Chapainawabganj Upazila Health Complex 443,upazila_health_complex,Chapainawabganj,Rajshahi,24.41397,88.451,54,8,1
+FAC00444,Chapainawabganj Community Clinic 444,community_clinic,Chapainawabganj,Rajshahi,24.60599,88.35604,4,0,1
+FAC00445,Chapainawabganj Upazila Health Complex 445,upazila_health_complex,Chapainawabganj,Rajshahi,24.44091,88.12807,47,5,1
+FAC00446,Chapainawabganj Upazila Health Complex 446,upazila_health_complex,Chapainawabganj,Rajshahi,24.53559,88.46996,80,2,1
+FAC00447,Chapainawabganj Union Health Centre 447,union_health_centre,Chapainawabganj,Rajshahi,24.57816,88.11412,11,0,0
+FAC00448,Pabna Upazila Health Complex 448,upazila_health_complex,Pabna,Rajshahi,24.14019,89.1621,69,5,1
+FAC00449,Pabna Private Clinic 449,private_clinic,Pabna,Rajshahi,23.84629,89.15819,93,11,1
+FAC00450,Pabna Upazila Health Complex 450,upazila_health_complex,Pabna,Rajshahi,24.21081,89.44334,50,3,1
+FAC00451,Pabna Union Health Centre 451,union_health_centre,Pabna,Rajshahi,24.21222,89.36117,20,0,1
+FAC00452,Pabna Upazila Health Complex 452,upazila_health_complex,Pabna,Rajshahi,23.94701,89.42721,80,5,1
+FAC00453,Pabna Community Clinic 453,community_clinic,Pabna,Rajshahi,24.08635,89.25914,1,0,1
+FAC00454,Pabna Union Health Centre 454,union_health_centre,Pabna,Rajshahi,23.97932,89.14529,11,0,1
+FAC00455,Pabna Private Clinic 455,private_clinic,Pabna,Rajshahi,24.00609,89.29577,62,12,1
+FAC00456,Pabna Union Health Centre 456,union_health_centre,Pabna,Rajshahi,24.13359,89.04964,18,0,1
+FAC00457,Pabna Union Health Centre 457,union_health_centre,Pabna,Rajshahi,24.02152,89.42344,17,0,1
+FAC00458,Pabna Union Health Centre 458,union_health_centre,Pabna,Rajshahi,24.13432,89.17529,6,0,1
+FAC00459,Pabna Union Health Centre 459,union_health_centre,Pabna,Rajshahi,23.83452,89.12632,7,0,1
+FAC00460,Sirajganj Upazila Health Complex 460,upazila_health_complex,Sirajganj,Rajshahi,24.47812,89.76391,69,2,1
+FAC00461,Sirajganj Community Clinic 461,community_clinic,Sirajganj,Rajshahi,24.65522,89.6695,2,0,0
+FAC00462,Sirajganj Upazila Health Complex 462,upazila_health_complex,Sirajganj,Rajshahi,24.45857,89.73553,62,7,1
+FAC00463,Sirajganj Union Health Centre 463,union_health_centre,Sirajganj,Rajshahi,24.43405,89.7791,17,0,1
+FAC00464,Sirajganj Upazila Health Complex 464,upazila_health_complex,Sirajganj,Rajshahi,24.2763,89.66313,31,5,1
+FAC00465,Sirajganj Upazila Health Complex 465,upazila_health_complex,Sirajganj,Rajshahi,24.38356,89.63105,76,3,1
+FAC00466,Sirajganj Union Health Centre 466,union_health_centre,Sirajganj,Rajshahi,24.43981,89.67289,16,0,1
+FAC00467,Sirajganj Upazila Health Complex 467,upazila_health_complex,Sirajganj,Rajshahi,24.58678,89.53074,49,2,1
+FAC00468,Sirajganj Union Health Centre 468,union_health_centre,Sirajganj,Rajshahi,24.63947,89.80592,10,0,1
+FAC00469,Sirajganj Union Health Centre 469,union_health_centre,Sirajganj,Rajshahi,24.47663,89.90182,15,0,1
+FAC00470,Sirajganj Union Health Centre 470,union_health_centre,Sirajganj,Rajshahi,24.31231,89.76932,10,0,1
+FAC00471,Sirajganj Private Clinic 471,private_clinic,Sirajganj,Rajshahi,24.49087,89.65119,35,9,1
+FAC00472,Sirajganj Upazila Health Complex 472,upazila_health_complex,Sirajganj,Rajshahi,24.58614,89.50763,78,7,1
+FAC00473,Sirajganj Private Clinic 473,private_clinic,Sirajganj,Rajshahi,24.37373,89.68142,33,7,1
+FAC00474,Bogra Private Clinic 474,private_clinic,Bogra,Rajshahi,24.7689,89.3207,77,12,1
+FAC00475,Bogra Upazila Health Complex 475,upazila_health_complex,Bogra,Rajshahi,24.83246,89.22561,52,8,1
+FAC00476,Bogra Private Clinic 476,private_clinic,Bogra,Rajshahi,24.66829,89.20864,88,11,1
+FAC00477,Bogra Upazila Health Complex 477,upazila_health_complex,Bogra,Rajshahi,24.93611,89.37446,41,4,1
+FAC00478,Bogra Upazila Health Complex 478,upazila_health_complex,Bogra,Rajshahi,24.71273,89.42932,54,5,1
+FAC00479,Bogra Union Health Centre 479,union_health_centre,Bogra,Rajshahi,24.87516,89.36514,10,0,1
+FAC00480,Bogra Upazila Health Complex 480,upazila_health_complex,Bogra,Rajshahi,24.65459,89.30768,58,6,0
+FAC00481,Bogra Upazila Health Complex 481,upazila_health_complex,Bogra,Rajshahi,24.85339,89.36749,54,6,1
+FAC00482,Bogra Union Health Centre 482,union_health_centre,Bogra,Rajshahi,24.84603,89.18608,19,0,1
+FAC00483,Bogra Private Clinic 483,private_clinic,Bogra,Rajshahi,24.75194,89.38625,47,2,1
+FAC00484,Bogra Union Health Centre 484,union_health_centre,Bogra,Rajshahi,24.87288,89.19951,20,0,1
+FAC00485,Bogra Private Clinic 485,private_clinic,Bogra,Rajshahi,24.99295,89.16801,56,10,1
+FAC00486,Bogra Union Health Centre 486,union_health_centre,Bogra,Rajshahi,24.67606,89.51493,18,0,1
+FAC00487,Bogra Upazila Health Complex 487,upazila_health_complex,Bogra,Rajshahi,24.74664,89.52907,32,5,1
+FAC00488,Bogra Private Clinic 488,private_clinic,Bogra,Rajshahi,24.98823,89.24205,25,14,1
+FAC00489,Bogra Union Health Centre 489,union_health_centre,Bogra,Rajshahi,24.70403,89.21096,18,0,1
+FAC00490,Joypurhat Upazila Health Complex 490,upazila_health_complex,Joypurhat,Rajshahi,25.03866,88.92678,33,6,1
+FAC00491,Joypurhat Upazila Health Complex 491,upazila_health_complex,Joypurhat,Rajshahi,25.01161,88.92073,75,4,1
+FAC00492,Joypurhat Community Clinic 492,community_clinic,Joypurhat,Rajshahi,25.24298,88.86276,5,0,1
+FAC00493,Joypurhat Union Health Centre 493,union_health_centre,Joypurhat,Rajshahi,25.32099,89.1846,6,0,1
+FAC00494,Joypurhat Private Clinic 494,private_clinic,Joypurhat,Rajshahi,25.19731,89.16763,41,4,1
+FAC00495,Joypurhat Union Health Centre 495,union_health_centre,Joypurhat,Rajshahi,24.94686,89.08136,20,0,1
+FAC00496,Khulna Upazila Health Complex 496,upazila_health_complex,Khulna,Khulna,22.97522,89.65861,34,7,1
+FAC00497,Khulna Private Clinic 497,private_clinic,Khulna,Khulna,22.82567,89.53504,98,7,1
+FAC00498,Khulna Private Clinic 498,private_clinic,Khulna,Khulna,23.05335,89.59963,21,13,1
+FAC00499,Khulna Private Clinic 499,private_clinic,Khulna,Khulna,22.72145,89.50934,78,8,1
+FAC00500,Khulna Upazila Health Complex 500,upazila_health_complex,Khulna,Khulna,22.86642,89.37776,48,4,1
+FAC00501,Khulna Private Clinic 501,private_clinic,Khulna,Khulna,22.6469,89.36411,97,14,1
+FAC00502,Khulna Union Health Centre 502,union_health_centre,Khulna,Khulna,23.03455,89.38981,8,0,1
+FAC00503,Khulna Community Clinic 503,community_clinic,Khulna,Khulna,22.71462,89.62328,3,0,1
+FAC00504,Khulna Union Health Centre 504,union_health_centre,Khulna,Khulna,23.01035,89.706,10,0,1
+FAC00505,Bagerhat Upazila Health Complex 505,upazila_health_complex,Bagerhat,Khulna,22.73238,89.85522,35,4,1
+FAC00506,Bagerhat Union Health Centre 506,union_health_centre,Bagerhat,Khulna,22.62886,89.60983,12,0,1
+FAC00507,Bagerhat Upazila Health Complex 507,upazila_health_complex,Bagerhat,Khulna,22.70122,89.79826,34,3,1
+FAC00508,Bagerhat District Hospital 508,district_hospital,Bagerhat,Khulna,22.49306,89.94825,475,46,1
+FAC00509,Bagerhat Union Health Centre 509,union_health_centre,Bagerhat,Khulna,22.60855,89.89124,12,0,1
+FAC00510,Bagerhat Upazila Health Complex 510,upazila_health_complex,Bagerhat,Khulna,22.6084,89.92758,49,3,1
+FAC00511,Bagerhat Union Health Centre 511,union_health_centre,Bagerhat,Khulna,22.4701,89.81755,9,0,1
+FAC00512,Satkhira Upazila Health Complex 512,upazila_health_complex,Satkhira,Khulna,22.59224,89.18164,52,7,1
+FAC00513,Satkhira Union Health Centre 513,union_health_centre,Satkhira,Khulna,22.87688,88.89054,19,0,1
+FAC00514,Satkhira Private Clinic 514,private_clinic,Satkhira,Khulna,22.66747,89.27623,85,13,1
+FAC00515,Satkhira Upazila Health Complex 515,upazila_health_complex,Satkhira,Khulna,22.53557,89.09589,47,7,1
+FAC00516,Satkhira Union Health Centre 516,union_health_centre,Satkhira,Khulna,22.87157,89.1421,5,0,1
+FAC00517,Satkhira Union Health Centre 517,union_health_centre,Satkhira,Khulna,22.82755,88.98244,11,0,1
+FAC00518,Satkhira Private Clinic 518,private_clinic,Satkhira,Khulna,22.66829,88.95848,40,9,1
+FAC00519,Satkhira Upazila Health Complex 519,upazila_health_complex,Satkhira,Khulna,22.90943,88.91047,30,4,1
+FAC00520,Jessore Union Health Centre 520,union_health_centre,Jessore,Khulna,23.1892,89.06382,16,0,1
+FAC00521,Jessore Community Clinic 521,community_clinic,Jessore,Khulna,22.95614,89.01751,0,0,1
+FAC00522,Jessore District Hospital 522,district_hospital,Jessore,Khulna,23.29609,89.21071,330,50,1
+FAC00523,Jessore Union Health Centre 523,union_health_centre,Jessore,Khulna,23.13517,89.1648,18,0,1
+FAC00524,Jessore Union Health Centre 524,union_health_centre,Jessore,Khulna,23.07089,89.12416,9,0,1
+FAC00525,Jessore Upazila Health Complex 525,upazila_health_complex,Jessore,Khulna,23.09257,89.24583,39,6,1
+FAC00526,Jessore Union Health Centre 526,union_health_centre,Jessore,Khulna,23.08527,89.18029,7,0,1
+FAC00527,Jessore Upazila Health Complex 527,upazila_health_complex,Jessore,Khulna,23.35564,89.03883,45,2,1
+FAC00528,Jessore Upazila Health Complex 528,upazila_health_complex,Jessore,Khulna,23.23834,89.06508,72,7,0
+FAC00529,Jessore Upazila Health Complex 529,upazila_health_complex,Jessore,Khulna,23.16722,89.14035,30,3,1
+FAC00530,Jessore Private Clinic 530,private_clinic,Jessore,Khulna,23.11242,89.3177,43,4,1
+FAC00531,Jessore Private Clinic 531,private_clinic,Jessore,Khulna,23.34475,89.1352,25,14,1
+FAC00532,Narail Union Health Centre 532,union_health_centre,Narail,Khulna,23.26582,89.54593,13,0,1
+FAC00533,Narail Union Health Centre 533,union_health_centre,Narail,Khulna,22.97679,89.67032,16,0,1
+FAC00534,Narail Upazila Health Complex 534,upazila_health_complex,Narail,Khulna,23.34588,89.58881,79,2,1
+FAC00535,Narail Private Clinic 535,private_clinic,Narail,Khulna,23.33022,89.29761,10,2,1
+FAC00536,Narail Upazila Health Complex 536,upazila_health_complex,Narail,Khulna,23.36211,89.66949,39,3,1
+FAC00537,Narail Community Clinic 537,community_clinic,Narail,Khulna,23.24091,89.39099,5,0,1
+FAC00538,Magura Community Clinic 538,community_clinic,Magura,Khulna,23.38695,89.23417,2,0,1
+FAC00539,Magura Union Health Centre 539,union_health_centre,Magura,Khulna,23.34651,89.55381,6,0,1
+FAC00540,Magura Community Clinic 540,community_clinic,Magura,Khulna,23.65348,89.58095,0,0,1
+FAC00541,Magura Upazila Health Complex 541,upazila_health_complex,Magura,Khulna,23.46857,89.36222,35,6,1
+FAC00542,Magura Private Clinic 542,private_clinic,Magura,Khulna,23.47173,89.46024,89,5,1
+FAC00543,Magura Private Clinic 543,private_clinic,Magura,Khulna,23.6638,89.53451,35,13,1
+FAC00544,Jhenaidah District Hospital 544,district_hospital,Jhenaidah,Khulna,23.42732,89.08653,509,20,1
+FAC00545,Jhenaidah Private Clinic 545,private_clinic,Jhenaidah,Khulna,23.65873,89.09966,52,2,1
+FAC00546,Jhenaidah Upazila Health Complex 546,upazila_health_complex,Jhenaidah,Khulna,23.75737,89.11882,43,6,1
+FAC00547,Jhenaidah Community Clinic 547,community_clinic,Jhenaidah,Khulna,23.63793,88.97503,1,0,1
+FAC00548,Jhenaidah Private Clinic 548,private_clinic,Jhenaidah,Khulna,23.63317,89.098,76,8,1
+FAC00549,Jhenaidah Upazila Health Complex 549,upazila_health_complex,Jhenaidah,Khulna,23.38355,89.29488,36,6,1
+FAC00550,Jhenaidah Union Health Centre 550,union_health_centre,Jhenaidah,Khulna,23.61628,88.99161,18,0,1
+FAC00551,Jhenaidah Private Clinic 551,private_clinic,Jhenaidah,Khulna,23.69084,89.07765,60,13,1
+FAC00552,Kushtia Upazila Health Complex 552,upazila_health_complex,Kushtia,Khulna,24.02447,89.03547,42,3,1
+FAC00553,Kushtia Upazila Health Complex 553,upazila_health_complex,Kushtia,Khulna,23.86017,89.01401,59,4,1
+FAC00554,Kushtia Upazila Health Complex 554,upazila_health_complex,Kushtia,Khulna,23.7979,88.83096,49,5,1
+FAC00555,Kushtia Union Health Centre 555,union_health_centre,Kushtia,Khulna,23.77591,89.15509,6,0,1
+FAC00556,Kushtia Private Clinic 556,private_clinic,Kushtia,Khulna,23.90722,89.07616,55,8,1
+FAC00557,Kushtia Community Clinic 557,community_clinic,Kushtia,Khulna,24.10022,89.15422,0,0,1
+FAC00558,Kushtia Union Health Centre 558,union_health_centre,Kushtia,Khulna,23.8846,89.13191,8,0,1
+FAC00559,Kushtia District Hospital 559,district_hospital,Kushtia,Khulna,23.76848,88.95446,413,24,1
+FAC00560,Chuadanga Community Clinic 560,community_clinic,Chuadanga,Khulna,23.67632,88.73588,0,0,1
+FAC00561,Chuadanga District Hospital 561,district_hospital,Chuadanga,Khulna,23.8172,88.81711,333,26,1
+FAC00562,Chuadanga Community Clinic 562,community_clinic,Chuadanga,Khulna,23.47401,89.0366,2,0,1
+FAC00563,Chuadanga Community Clinic 563,community_clinic,Chuadanga,Khulna,23.78164,88.7958,3,0,1
+FAC00564,Chuadanga Union Health Centre 564,union_health_centre,Chuadanga,Khulna,23.57584,89.02165,10,0,1
+FAC00565,Chuadanga Union Health Centre 565,union_health_centre,Chuadanga,Khulna,23.43535,88.89444,9,0,1
+FAC00566,Meherpur Upazila Health Complex 566,upazila_health_complex,Meherpur,Khulna,23.75297,88.4504,56,6,1
+FAC00567,Meherpur Union Health Centre 567,union_health_centre,Meherpur,Khulna,23.81973,88.76475,12,0,1
+FAC00568,Meherpur Community Clinic 568,community_clinic,Meherpur,Khulna,23.70021,88.65139,5,0,1
+FAC00569,Meherpur Community Clinic 569,community_clinic,Meherpur,Khulna,23.68371,88.53079,4,0,1
+FAC00570,Meherpur Union Health Centre 570,union_health_centre,Meherpur,Khulna,23.93634,88.75436,5,0,1
+FAC00571,Meherpur Community Clinic 571,community_clinic,Meherpur,Khulna,23.69947,88.66876,4,0,1
+FAC00572,Barisal Upazila Health Complex 572,upazila_health_complex,Barisal,Barisal,22.58711,90.36832,45,7,1
+FAC00573,Barisal Private Clinic 573,private_clinic,Barisal,Barisal,22.85346,90.48435,38,11,1
+FAC00574,Barisal Private Clinic 574,private_clinic,Barisal,Barisal,22.58508,90.27342,32,4,1
+FAC00575,Barisal Upazila Health Complex 575,upazila_health_complex,Barisal,Barisal,22.79052,90.28824,67,2,1
+FAC00576,Barisal Upazila Health Complex 576,upazila_health_complex,Barisal,Barisal,22.91572,90.52142,42,8,1
+FAC00577,Barisal Upazila Health Complex 577,upazila_health_complex,Barisal,Barisal,22.52071,90.23585,61,2,1
+FAC00578,Barisal Union Health Centre 578,union_health_centre,Barisal,Barisal,22.62696,90.40372,5,0,1
+FAC00579,Barisal Upazila Health Complex 579,upazila_health_complex,Barisal,Barisal,22.85248,90.27588,41,8,1
+FAC00580,Barisal Union Health Centre 580,union_health_centre,Barisal,Barisal,22.82172,90.50595,9,0,1
+FAC00581,Barisal Community Clinic 581,community_clinic,Barisal,Barisal,22.791,90.42484,2,0,1
+FAC00582,Bhola Upazila Health Complex 582,upazila_health_complex,Bhola,Barisal,22.89568,90.75213,50,3,1
+FAC00583,Bhola Union Health Centre 583,union_health_centre,Bhola,Barisal,22.75194,90.50655,20,0,1
+FAC00584,Bhola Union Health Centre 584,union_health_centre,Bhola,Barisal,22.56452,90.68904,16,0,1
+FAC00585,Bhola Upazila Health Complex 585,upazila_health_complex,Bhola,Barisal,22.52233,90.75059,74,4,1
+FAC00586,Bhola Community Clinic 586,community_clinic,Bhola,Barisal,22.84063,90.76907,3,0,1
+FAC00587,Bhola Upazila Health Complex 587,upazila_health_complex,Bhola,Barisal,22.89201,90.52709,50,8,1
+FAC00588,Bhola Community Clinic 588,community_clinic,Bhola,Barisal,22.61201,90.46413,1,0,1
+FAC00589,Bhola Upazila Health Complex 589,upazila_health_complex,Bhola,Barisal,22.82783,90.72471,70,2,1
+FAC00590,Patuakhali Upazila Health Complex 590,upazila_health_complex,Patuakhali,Barisal,22.23186,90.4104,30,4,1
+FAC00591,Patuakhali Private Clinic 591,private_clinic,Patuakhali,Barisal,22.30941,90.42774,10,2,1
+FAC00592,Patuakhali Private Clinic 592,private_clinic,Patuakhali,Barisal,22.29414,90.27055,73,8,1
+FAC00593,Patuakhali Private Clinic 593,private_clinic,Patuakhali,Barisal,22.47323,90.20466,83,12,1
+FAC00594,Patuakhali Private Clinic 594,private_clinic,Patuakhali,Barisal,22.14843,90.2203,14,6,1
+FAC00595,Patuakhali Upazila Health Complex 595,upazila_health_complex,Patuakhali,Barisal,22.46167,90.3461,54,3,1
+FAC00596,Patuakhali Upazila Health Complex 596,upazila_health_complex,Patuakhali,Barisal,22.53262,90.41538,68,6,1
+FAC00597,Patuakhali Union Health Centre 597,union_health_centre,Patuakhali,Barisal,22.20873,90.14995,18,0,1
+FAC00598,Pirojpur Upazila Health Complex 598,upazila_health_complex,Pirojpur,Barisal,22.6768,90.07709,74,6,1
+FAC00599,Pirojpur Upazila Health Complex 599,upazila_health_complex,Pirojpur,Barisal,22.38094,90.00748,45,2,1
+FAC00600,Pirojpur Upazila Health Complex 600,upazila_health_complex,Pirojpur,Barisal,22.54725,89.8855,53,2,1
+FAC00601,Pirojpur Union Health Centre 601,union_health_centre,Pirojpur,Barisal,22.40177,89.84696,11,0,1
+FAC00602,Pirojpur Community Clinic 602,community_clinic,Pirojpur,Barisal,22.73036,89.89158,3,0,1
+FAC00603,Pirojpur Union Health Centre 603,union_health_centre,Pirojpur,Barisal,22.3992,89.99532,13,0,1
+FAC00604,Jhalokathi Private Clinic 604,private_clinic,Jhalokathi,Barisal,22.61914,90.09745,57,4,1
+FAC00605,Jhalokathi Upazila Health Complex 605,upazila_health_complex,Jhalokathi,Barisal,22.45012,90.31258,47,6,1
+FAC00606,Jhalokathi Upazila Health Complex 606,upazila_health_complex,Jhalokathi,Barisal,22.66124,90.40871,52,8,1
+FAC00607,Jhalokathi Union Health Centre 607,union_health_centre,Jhalokathi,Barisal,22.7831,90.1658,17,0,1
+FAC00608,Jhalokathi Private Clinic 608,private_clinic,Jhalokathi,Barisal,22.81093,90.19116,70,11,1
+FAC00609,Jhalokathi Community Clinic 609,community_clinic,Jhalokathi,Barisal,22.43828,90.23294,5,0,1
+FAC00610,Barguna Union Health Centre 610,union_health_centre,Barguna,Barisal,21.98292,89.98056,9,0,1
+FAC00611,Barguna Community Clinic 611,community_clinic,Barguna,Barisal,22.28572,89.70292,1,0,1
+FAC00612,Barguna Community Clinic 612,community_clinic,Barguna,Barisal,22.01884,90.00933,3,0,1
+FAC00613,Barguna Union Health Centre 613,union_health_centre,Barguna,Barisal,22.33075,90.04964,15,0,1
+FAC00614,Barguna Upazila Health Complex 614,upazila_health_complex,Barguna,Barisal,22.0735,89.76893,55,6,1
+FAC00615,Barguna Private Clinic 615,private_clinic,Barguna,Barisal,22.18853,89.99134,99,11,1
+FAC00616,Rangpur Upazila Health Complex 616,upazila_health_complex,Rangpur,Rangpur,25.78028,89.47973,66,6,1
+FAC00617,Rangpur Upazila Health Complex 617,upazila_health_complex,Rangpur,Rangpur,25.86963,89.43689,79,2,1
+FAC00618,Rangpur Private Clinic 618,private_clinic,Rangpur,Rangpur,25.81201,89.30689,43,8,1
+FAC00619,Rangpur Upazila Health Complex 619,upazila_health_complex,Rangpur,Rangpur,25.79593,89.35476,55,3,1
+FAC00620,Rangpur Upazila Health Complex 620,upazila_health_complex,Rangpur,Rangpur,25.62843,89.38333,51,7,1
+FAC00621,Rangpur Private Clinic 621,private_clinic,Rangpur,Rangpur,25.88355,89.18854,12,7,1
+FAC00622,Rangpur Union Health Centre 622,union_health_centre,Rangpur,Rangpur,25.9518,89.1555,8,0,1
+FAC00623,Rangpur Private Clinic 623,private_clinic,Rangpur,Rangpur,25.84457,89.32139,51,6,1
+FAC00624,Rangpur Union Health Centre 624,union_health_centre,Rangpur,Rangpur,25.84992,89.38938,18,0,1
+FAC00625,Rangpur Private Clinic 625,private_clinic,Rangpur,Rangpur,25.59385,89.19209,75,14,1
+FAC00626,Rangpur Upazila Health Complex 626,upazila_health_complex,Rangpur,Rangpur,25.53664,89.14002,63,6,1
+FAC00627,Rangpur Private Clinic 627,private_clinic,Rangpur,Rangpur,25.72474,89.45913,41,2,1
+FAC00628,Gaibandha Upazila Health Complex 628,upazila_health_complex,Gaibandha,Rangpur,25.28315,89.71485,59,6,1
+FAC00629,Gaibandha Upazila Health Complex 629,upazila_health_complex,Gaibandha,Rangpur,25.30479,89.73133,61,6,1
+FAC00630,Gaibandha Union Health Centre 630,union_health_centre,Gaibandha,Rangpur,25.18045,89.70228,16,0,1
+FAC00631,Gaibandha Union Health Centre 631,union_health_centre,Gaibandha,Rangpur,25.12058,89.33055,14,0,1
+FAC00632,Gaibandha Private Clinic 632,private_clinic,Gaibandha,Rangpur,25.20589,89.40775,37,15,1
+FAC00633,Gaibandha Union Health Centre 633,union_health_centre,Gaibandha,Rangpur,25.48894,89.73424,5,0,1
+FAC00634,Gaibandha Union Health Centre 634,union_health_centre,Gaibandha,Rangpur,25.39334,89.5732,9,0,0
+FAC00635,Gaibandha Upazila Health Complex 635,upazila_health_complex,Gaibandha,Rangpur,25.53399,89.59151,49,7,1
+FAC00636,Gaibandha Upazila Health Complex 636,upazila_health_complex,Gaibandha,Rangpur,25.21938,89.51405,52,5,1
+FAC00637,Gaibandha Private Clinic 637,private_clinic,Gaibandha,Rangpur,25.15352,89.53377,60,11,1
+FAC00638,Gaibandha Private Clinic 638,private_clinic,Gaibandha,Rangpur,25.39333,89.57668,57,10,1
+FAC00639,Gaibandha Upazila Health Complex 639,upazila_health_complex,Gaibandha,Rangpur,25.54338,89.59056,34,4,1
+FAC00640,Nilphamari Upazila Health Complex 640,upazila_health_complex,Nilphamari,Rangpur,25.84327,88.70197,75,7,1
+FAC00641,Nilphamari Private Clinic 641,private_clinic,Nilphamari,Rangpur,26.00243,88.93553,86,8,1
+FAC00642,Nilphamari Union Health Centre 642,union_health_centre,Nilphamari,Rangpur,25.82595,88.82017,14,0,1
+FAC00643,Nilphamari District Hospital 643,district_hospital,Nilphamari,Rangpur,25.79536,88.95568,592,46,1
+FAC00644,Nilphamari Union Health Centre 644,union_health_centre,Nilphamari,Rangpur,26.11067,88.93162,20,0,1
+FAC00645,Nilphamari Private Clinic 645,private_clinic,Nilphamari,Rangpur,25.7915,88.67895,94,10,1
+FAC00646,Nilphamari Upazila Health Complex 646,upazila_health_complex,Nilphamari,Rangpur,26.11335,89.05265,65,8,1
+FAC00647,Nilphamari Union Health Centre 647,union_health_centre,Nilphamari,Rangpur,25.86812,88.96345,12,0,1
+FAC00648,Lalmonirhat Private Clinic 648,private_clinic,Lalmonirhat,Rangpur,25.81635,89.35938,52,7,1
+FAC00649,Lalmonirhat Union Health Centre 649,union_health_centre,Lalmonirhat,Rangpur,25.90948,89.3156,7,0,1
+FAC00650,Lalmonirhat Union Health Centre 650,union_health_centre,Lalmonirhat,Rangpur,25.88347,89.61317,14,0,1
+FAC00651,Lalmonirhat Community Clinic 651,community_clinic,Lalmonirhat,Rangpur,25.88174,89.48054,2,0,1
+FAC00652,Lalmonirhat Union Health Centre 652,union_health_centre,Lalmonirhat,Rangpur,26.08115,89.30936,15,0,1
+FAC00653,Lalmonirhat Upazila Health Complex 653,upazila_health_complex,Lalmonirhat,Rangpur,25.98088,89.23207,41,4,1
+FAC00654,Kurigram Private Clinic 654,private_clinic,Kurigram,Rangpur,25.92177,89.63121,31,11,1
+FAC00655,Kurigram Upazila Health Complex 655,upazila_health_complex,Kurigram,Rangpur,25.86413,89.59329,69,5,1
+FAC00656,Kurigram Upazila Health Complex 656,upazila_health_complex,Kurigram,Rangpur,25.67314,89.57996,32,6,0
+FAC00657,Kurigram Upazila Health Complex 657,upazila_health_complex,Kurigram,Rangpur,25.59328,89.41761,63,3,1
+FAC00658,Kurigram Upazila Health Complex 658,upazila_health_complex,Kurigram,Rangpur,25.64213,89.58456,52,4,1
+FAC00659,Kurigram Upazila Health Complex 659,upazila_health_complex,Kurigram,Rangpur,26.00272,89.61641,32,4,1
+FAC00660,Kurigram Union Health Centre 660,union_health_centre,Kurigram,Rangpur,25.97611,89.85381,18,0,1
+FAC00661,Kurigram Community Clinic 661,community_clinic,Kurigram,Rangpur,25.91545,89.48835,2,0,1
+FAC00662,Kurigram Private Clinic 662,private_clinic,Kurigram,Rangpur,25.6841,89.84915,12,5,1
+FAC00663,Thakurgaon District Hospital 663,district_hospital,Thakurgaon,Rangpur,25.86589,88.52099,558,25,1
+FAC00664,Thakurgaon Upazila Health Complex 664,upazila_health_complex,Thakurgaon,Rangpur,26.15105,88.48228,70,4,1
+FAC00665,Thakurgaon District Hospital 665,district_hospital,Thakurgaon,Rangpur,26.17959,88.22932,355,40,1
+FAC00666,Thakurgaon Union Health Centre 666,union_health_centre,Thakurgaon,Rangpur,26.0525,88.41683,8,0,1
+FAC00667,Thakurgaon Union Health Centre 667,union_health_centre,Thakurgaon,Rangpur,25.94419,88.49923,5,0,1
+FAC00668,Thakurgaon Upazila Health Complex 668,upazila_health_complex,Thakurgaon,Rangpur,25.87205,88.57359,68,7,1
+FAC00669,Dinajpur Private Clinic 669,private_clinic,Dinajpur,Rangpur,25.45187,88.46216,25,6,1
+FAC00670,Dinajpur Upazila Health Complex 670,upazila_health_complex,Dinajpur,Rangpur,25.63188,88.50414,46,8,1
+FAC00671,Dinajpur Upazila Health Complex 671,upazila_health_complex,Dinajpur,Rangpur,25.6201,88.50679,32,6,1
+FAC00672,Dinajpur Upazila Health Complex 672,upazila_health_complex,Dinajpur,Rangpur,25.69722,88.81443,30,2,1
+FAC00673,Dinajpur Union Health Centre 673,union_health_centre,Dinajpur,Rangpur,25.81946,88.75839,9,0,1
+FAC00674,Dinajpur Private Clinic 674,private_clinic,Dinajpur,Rangpur,25.50341,88.85041,42,12,1
+FAC00675,Dinajpur Union Health Centre 675,union_health_centre,Dinajpur,Rangpur,25.7595,88.80002,8,0,1
+FAC00676,Dinajpur Upazila Health Complex 676,upazila_health_complex,Dinajpur,Rangpur,25.58914,88.4664,73,4,1
+FAC00677,Dinajpur Private Clinic 677,private_clinic,Dinajpur,Rangpur,25.46259,88.70017,11,11,1
+FAC00678,Dinajpur Private Clinic 678,private_clinic,Dinajpur,Rangpur,25.78823,88.4563,89,6,1
+FAC00679,Dinajpur Upazila Health Complex 679,upazila_health_complex,Dinajpur,Rangpur,25.82512,88.53501,55,5,1
+FAC00680,Dinajpur Private Clinic 680,private_clinic,Dinajpur,Rangpur,25.79159,88.48878,63,12,1
+FAC00681,Dinajpur Private Clinic 681,private_clinic,Dinajpur,Rangpur,25.58475,88.67533,30,3,1
+FAC00682,Panchagarh Union Health Centre 682,union_health_centre,Panchagarh,Rangpur,26.38998,88.67893,10,0,1
+FAC00683,Panchagarh Private Clinic 683,private_clinic,Panchagarh,Rangpur,26.52598,88.38579,26,9,1
+FAC00684,Panchagarh District Hospital 684,district_hospital,Panchagarh,Rangpur,26.25926,88.64611,433,40,1
+FAC00685,Panchagarh Private Clinic 685,private_clinic,Panchagarh,Rangpur,26.36961,88.76637,83,13,1
+FAC00686,Panchagarh Upazila Health Complex 686,upazila_health_complex,Panchagarh,Rangpur,26.42926,88.37801,63,7,1
+FAC00687,Panchagarh Upazila Health Complex 687,upazila_health_complex,Panchagarh,Rangpur,26.41857,88.50545,52,7,1
