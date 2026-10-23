@@ -1,0 +1,35 @@
+[
+  {
+    "scale_factor": 0.25,
+    "input_rows": 6037903,
+    "output_groups": 16938,
+    "elapsed_seconds": 10.69,
+    "rows_per_second": 564574.6,
+    "shuffle_partitions": 16,
+    "aqe_enabled": true,
+    "input_method": "generated",
+    "status": "complete"
+  },
+  {
+    "scale_factor": 0.5,
+    "input_rows": 12075806,
+    "output_groups": 16938,
+    "elapsed_seconds": 5.03,
+    "rows_per_second": 2403049.06,
+    "shuffle_partitions": 16,
+    "aqe_enabled": true,
+    "input_method": "logical_repeat",
+    "status": "complete"
+  },
+  {
+    "scale_factor": 1.0,
+    "input_rows": 24151612,
+    "output_groups": 16938,
+    "elapsed_seconds": 8.36,
+    "rows_per_second": 2889920.07,
+    "shuffle_partitions": 16,
+    "aqe_enabled": true,
+    "input_method": "logical_repeat",
+    "status": "complete"
+  }
+]
