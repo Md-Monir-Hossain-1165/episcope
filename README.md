@@ -41,6 +41,16 @@ Raw Sources (S1-S6)
 make run-incremental
 ```
 
+## Refresh Dashboard Data
+After running the Gold and analytics stages, regenerate the static dashboard exports:
+
+```bash
+python serving/export.py
+```
+
+This writes the latest privacy-safe JSON and simplified district boundaries to
+`dashboard/data/`. Serve the dashboard locally with `cd dashboard && python -m http.server 8000`.
+
 ## Requirement Traceability
 | Requirement ID | File / Notebook | Report Section |
 |---|---|---|
