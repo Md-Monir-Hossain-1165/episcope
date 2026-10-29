@@ -51,6 +51,16 @@ python serving/export.py
 This writes the latest privacy-safe JSON and simplified district boundaries to
 `dashboard/data/`. Serve the dashboard locally with `cd dashboard && python -m http.server 8000`.
 
+## Deploy to Vercel
+
+The repository includes `vercel.json`, which publishes the static `dashboard/`
+directory as the site root. In the Vercel dashboard, select **Add New → Project**,
+import this GitHub repository, leave the framework preset as **Other**, and click
+**Deploy**. No build command or environment variables are required.
+
+Before a later deployment, run `python serving/export.py` and commit any updated
+`dashboard/data/` files so Vercel receives the current dashboard snapshot.
+
 ## Requirement Traceability
 | Requirement ID | File / Notebook | Report Section |
 |---|---|---|
