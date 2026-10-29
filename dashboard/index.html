@@ -1,0 +1,2258 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description"
+    content="EpiScope — a Bangladesh disease dashboard showing cases, trends, supplies and early warnings.">
+  <title>EpiScope · Disease dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f5f3ed;
+      --surface: #ffffff;
+      --surface-2: #faf9f5;
+      --ink: #1a1d1b;
+      --ink-2: #4c534f;
+      --ink-3: #6e756f;
+      --line: #e4e0d6;
+      --line-2: #d2cdbf;
+      --accent: #1f4d43;
+      --accent-2: #2f6b5c;
+      --accent-soft: #ecf2ef;
+      --danger: #9c3b33;
+      --danger-soft: #f8eeec;
+      --amber: #a87a33;
+      --amber-soft: #f8f1e3;
+      --no-data: #eae7df;
+      --map-1: #efede5;
+      --map-2: #d3ded7;
+      --map-3: #8fb0a3;
+      --map-4: #1f4d43;
+      --cal-1: #f6f0e5;
+      --cal-2: #e4cbb0;
+      --cal-3: #c2966f;
+      --cal-4: #87512f;
+      --sidebar: 244px;
+      --r: 12px;
+      --r-sm: 8px;
+      --shadow: 0 1px 2px rgba(26, 29, 27, .04), 0 1px 1px rgba(26, 29, 27, .02);
+      --font-ui: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      height: 100%;
+      background: var(--paper);
+    }
+
+    body {
+      font-family: var(--font-ui);
+      font-size: 13px;
+      line-height: 1.45;
+      color: var(--ink);
+      display: flex;
+      overflow: hidden;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+      color: inherit;
+    }
+
+    button {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    ::selection {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--line-2);
+      border-radius: 4px;
+    }
+
+    /* ── Sidebar ─────────────────────────────── */
+    .sidebar {
+      width: var(--sidebar);
+      min-width: var(--sidebar);
+      height: 100vh;
+      padding: 22px 14px 18px;
+      background: #fbfaf6;
+      border-right: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      z-index: 10;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding: 0 6px 22px;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      background: var(--ink);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .brand-name {
+      font-family: var(--font-display);
+      font-size: 19px;
+      font-weight: 400;
+      letter-spacing: -.01em;
+      line-height: 1.1;
+      color: var(--ink);
+    }
+
+    .brand-sub {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      margin-top: 3px;
+    }
+
+    .nav-section {
+      padding: 0 8px 8px;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+    }
+
+    .nav-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      width: 100%;
+      padding: 9px 11px;
+      margin-bottom: 2px;
+      border: 1px solid transparent;
+      border-radius: var(--r-sm);
+      background: transparent;
+      color: var(--ink-2);
+      font-size: 12.5px;
+      font-weight: 500;
+      text-align: left;
+      cursor: pointer;
+      transition: background-color .16s ease, color .16s ease, border-color .16s ease;
+    }
+
+    .nav-item svg {
+      flex-shrink: 0;
+      color: var(--ink-3);
+      transition: color .16s ease;
+    }
+
+    .nav-item:hover {
+      background: #f3f1ea;
+      color: var(--ink);
+    }
+
+    .nav-item:hover svg {
+      color: var(--ink-2);
+    }
+
+    .nav-item.active {
+      background: var(--surface);
+      border-color: var(--line);
+      color: var(--ink);
+      box-shadow: var(--shadow);
+    }
+
+    .nav-item.active svg {
+      color: var(--accent);
+    }
+
+    .nav-item.active::before {
+      content: '';
+      position: absolute;
+      left: -1px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2px;
+      height: 16px;
+      border-radius: 2px;
+      background: var(--accent);
+    }
+
+    .sidebar-footer {
+      margin-top: auto;
+      padding: 16px 8px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .live {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      color: var(--ink-2);
+    }
+
+    .pulse {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-2);
+      box-shadow: 0 0 0 3px rgba(47, 107, 92, .12);
+    }
+
+    .foot-note {
+      margin-top: 7px;
+      font-size: 10px;
+      color: var(--ink-3);
+      letter-spacing: .01em;
+    }
+
+    /* ── Main ────────────────────────────────── */
+    .main {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 16px 32px 14px;
+      border-bottom: 1px solid var(--line);
+      background: var(--paper);
+      flex-shrink: 0;
+    }
+
+    .topbar-heading {
+      min-width: 0;
+    }
+
+    .topbar-title {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 400;
+      letter-spacing: -.012em;
+      line-height: 1.1;
+      color: var(--ink);
+    }
+
+    .topbar-sub {
+      font-size: 11.5px;
+      color: var(--ink-3);
+      margin-top: 5px;
+    }
+
+    .filter-group {
+      display: flex;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .field {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .field-label {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+    }
+
+    .field select {
+      appearance: none;
+      -webkit-appearance: none;
+      height: 36px;
+      min-width: 152px;
+      padding: 0 34px 0 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--r-sm);
+      background: var(--surface);
+      color: var(--ink);
+      font-size: 12.5px;
+      font-weight: 500;
+      cursor: pointer;
+      text-overflow: ellipsis;
+      transition: border-color .16s ease, box-shadow .16s ease;
+    }
+
+    #district {
+      min-width: 172px;
+    }
+
+    .field select:hover {
+      border-color: var(--line-2);
+    }
+
+    .field select:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(31, 77, 67, .1);
+    }
+
+    .field select option {
+      background: var(--surface);
+      color: var(--ink);
+    }
+
+    .field-chevron {
+      position: absolute;
+      right: 11px;
+      bottom: 12px;
+      pointer-events: none;
+      color: var(--ink-3);
+    }
+
+    /* ── Content ─────────────────────────────── */
+    .content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 18px 32px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11.5px;
+      color: var(--ink-3);
+      padding: 0 2px;
+    }
+
+    .status .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-2);
+      flex-shrink: 0;
+    }
+
+    .status-meta {
+      margin-left: auto;
+      font-size: 10.5px;
+      color: var(--ink-3);
+      letter-spacing: .02em;
+    }
+
+    .status.error {
+      color: var(--danger);
+    }
+
+    .status.error .dot {
+      background: var(--danger);
+    }
+
+    .status.error .status-meta {
+      display: none;
+    }
+
+    /* ── KPI cards ───────────────────────────── */
+    .kpi-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .kpi {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      padding: 17px 20px 16px;
+      box-shadow: var(--shadow);
+      min-width: 0;
+    }
+
+    .kpi-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .kpi-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .c-alert .kpi-dot {
+      background: var(--danger);
+    }
+
+    .c-forecast .kpi-dot {
+      background: var(--amber);
+    }
+
+    .c-alloc .kpi-dot {
+      background: var(--ink-3);
+    }
+
+    .kpi-val {
+      margin-top: 12px;
+      font-size: 32px;
+      font-weight: 500;
+      letter-spacing: -.025em;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+      color: var(--ink);
+    }
+
+    .kpi-sub {
+      margin-top: 8px;
+      font-size: 11.5px;
+      color: var(--ink-3);
+    }
+
+    /* ── Panels ──────────────────────────────── */
+    .panel {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      box-shadow: var(--shadow);
+    }
+
+    .panel-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 17px 20px 14px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .panel-title {
+      font-family: var(--font-display);
+      font-size: 17.5px;
+      font-weight: 400;
+      letter-spacing: -.005em;
+      line-height: 1.2;
+      color: var(--ink);
+    }
+
+    .panel-sub {
+      font-size: 11.5px;
+      color: var(--ink-3);
+      margin-top: 3px;
+    }
+
+    .panel-body {
+      padding: 16px 20px 20px;
+    }
+
+    .chip {
+      flex-shrink: 0;
+      padding: 5px 9px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--surface-2);
+      color: var(--ink-2);
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .chip-accent {
+      color: var(--accent);
+      background: var(--accent-soft);
+      border-color: #d8e5df;
+    }
+
+    .chip-danger {
+      color: var(--danger);
+      background: var(--danger-soft);
+      border-color: #eedbd7;
+    }
+
+    .chip-amber {
+      color: #8a6320;
+      background: var(--amber-soft);
+      border-color: #eddfc4;
+    }
+
+    /* ── Grid ────────────────────────────────── */
+    .grid-main {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 360px;
+      align-items: start;
+      gap: 18px;
+    }
+
+    .side-col {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .grid-bottom {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 18px;
+    }
+
+    /* ── Map ─────────────────────────────────── */
+    .map-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 198px;
+      gap: 10px;
+      padding: 8px 20px 0;
+    }
+
+    .map-wrap {
+      min-width: 0;
+    }
+
+    #map {
+      display: block;
+      width: 100%;
+      height: 460px;
+    }
+
+    .district {
+      cursor: pointer;
+      stroke: rgba(255, 255, 255, .65);
+      stroke-width: .5;
+      transition: stroke .15s ease, stroke-width .15s ease, filter .15s ease;
+    }
+
+    .district:hover {
+      stroke: var(--ink);
+      stroke-width: .9;
+      filter: saturate(1.06);
+    }
+
+    .district.selected {
+      stroke: var(--ink);
+      stroke-width: 1.4;
+    }
+
+    .rank {
+      border-left: 1px solid var(--line);
+      padding: 4px 0 0 16px;
+      min-width: 0;
+    }
+
+    .rank-head {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      margin-bottom: 8px;
+    }
+
+    .rank-row {
+      display: grid;
+      grid-template-columns: 18px minmax(0, 1fr) auto;
+      grid-template-areas: 'idx name val' 'idx bar bar';
+      align-items: center;
+      gap: 2px 8px;
+      width: 100%;
+      padding: 6px 4px 7px;
+      border: 0;
+      border-radius: 6px;
+      background: transparent;
+      text-align: left;
+      cursor: pointer;
+      transition: background-color .15s ease;
+    }
+
+    .rank-row:hover {
+      background: var(--surface-2);
+    }
+
+    .rank-idx {
+      grid-area: idx;
+      font-size: 9.5px;
+      color: var(--ink-3);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .rank-name {
+      grid-area: name;
+      font-size: 11.5px;
+      font-weight: 500;
+      color: var(--ink-2);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .rank-val {
+      grid-area: val;
+      font-size: 11px;
+      color: var(--ink);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .rank-track {
+      grid-area: bar;
+      display: block;
+      height: 2px;
+      border-radius: 2px;
+      background: var(--line);
+      overflow: hidden;
+      margin-top: 3px;
+    }
+
+    .rank-track span {
+      display: block;
+      height: 100%;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    .map-legend {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 20px 18px;
+      font-size: 10.5px;
+      color: var(--ink-3);
+    }
+
+    .legend-bar {
+      width: 132px;
+      height: 6px;
+      border-radius: 3px;
+      background: linear-gradient(90deg, var(--map-1), var(--map-2), var(--map-3), var(--map-4));
+    }
+
+    .legend-nodata {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: auto;
+    }
+
+    .legend-nodata i {
+      width: 10px;
+      height: 10px;
+      border-radius: 2px;
+      background: var(--no-data);
+      border: 1px solid var(--line);
+    }
+
+    /* ── Charts ──────────────────────────────── */
+    .axis text {
+      font-family: var(--font-ui);
+      font-size: 9.5px;
+      fill: var(--ink-3);
+      letter-spacing: .02em;
+    }
+
+    .axis path {
+      display: none;
+    }
+
+    .axis line {
+      stroke: var(--line);
+    }
+
+    .gridline {
+      stroke: var(--line);
+      stroke-dasharray: 2 4;
+    }
+
+    .chart-empty {
+      font-family: var(--font-ui);
+      font-size: 11.5px;
+      fill: var(--ink-3);
+    }
+
+    .trend-wrap {
+      padding-top: 12px;
+    }
+
+    #trend {
+      display: block;
+      width: 100%;
+      height: 226px;
+    }
+
+    .chart-legend {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px 16px;
+      margin-top: 12px;
+      font-size: 10.5px;
+      color: var(--ink-3);
+    }
+
+    .lg {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .lg-line {
+      width: 14px;
+      height: 0;
+      border-top: 2px solid var(--accent);
+    }
+
+    .lg-line.dashed {
+      border-top: 2px dashed var(--amber);
+    }
+
+    .lg-ci {
+      width: 1px;
+      height: 11px;
+      background: var(--amber);
+      opacity: .55;
+    }
+
+    .lg-swatch {
+      width: 10px;
+      height: 10px;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    .lg-swatch.accent {
+      background: var(--accent);
+    }
+
+    .lg-swatch.track {
+      background: var(--map-1);
+      border: 1px solid var(--line);
+    }
+
+    .lg-swatch.cal {
+      background: linear-gradient(90deg, var(--cal-1), var(--cal-4));
+    }
+
+    .lg-swatch.risk-routine {
+      background: var(--line-2);
+    }
+
+    .lg-swatch.risk-prepare {
+      background: var(--amber);
+    }
+
+    .lg-swatch.risk-peak {
+      background: var(--danger);
+    }
+
+    .cal-wrap {
+      padding-top: 10px;
+    }
+
+    #calendar {
+      display: block;
+      width: 100%;
+      height: 150px;
+    }
+
+    .cal-cap {
+      font-family: var(--font-ui);
+      font-size: 9.5px;
+      fill: var(--ink-3);
+      letter-spacing: .04em;
+    }
+
+    .cal-wrap .chart-legend {
+      margin-top: 6px;
+    }
+
+    .alloc-wrap {
+      padding-top: 14px;
+    }
+
+    #allocation {
+      display: block;
+      width: 100%;
+      height: 344px;
+    }
+
+    /* ── Readiness ───────────────────────────── */
+    .ready-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--line);
+      gap: 1px;
+    }
+
+    .ready-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding: 11px 12px 12px;
+      background: var(--surface);
+    }
+
+    .ready-label {
+      font-size: 8.5px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+    }
+
+    .ready-val {
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: -.02em;
+      font-variant-numeric: tabular-nums;
+      color: var(--ink);
+    }
+
+    .ready-val.is-danger {
+      color: var(--danger);
+    }
+
+    .coverage {
+      margin-top: 16px;
+    }
+
+    .coverage-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+    }
+
+    #coverage-value {
+      font-size: 12px;
+      letter-spacing: 0;
+      color: var(--ink);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .coverage-track {
+      margin-top: 7px;
+      height: 8px;
+      border-radius: 4px;
+      background: var(--map-1);
+      overflow: hidden;
+    }
+
+    .coverage-fill {
+      height: 100%;
+      width: 0;
+      border-radius: 4px;
+      background: var(--accent);
+      transition: width .6s cubic-bezier(.2, .7, .3, 1);
+    }
+
+    .ready-note {
+      margin-top: 8px;
+      font-size: 10.5px;
+      color: var(--ink-3);
+    }
+
+    .shortfall {
+      margin-top: 16px;
+      padding-top: 13px;
+      border-top: 1px solid var(--line);
+    }
+
+    .shortfall-head {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      margin-bottom: 4px;
+    }
+
+    .short-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 5px 0;
+      font-size: 11.5px;
+      color: var(--ink-2);
+      border-bottom: 1px solid var(--surface-2);
+    }
+
+    .short-row:last-child {
+      border-bottom: 0;
+    }
+
+    .short-val {
+      color: var(--danger);
+      font-variant-numeric: tabular-nums;
+      font-weight: 500;
+    }
+
+    /* ── Alerts table ────────────────────────── */
+    .alert-toolbar {
+      display: flex;
+      align-items: center;
+      padding: 12px 20px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .search {
+      position: relative;
+      width: 280px;
+      max-width: 100%;
+    }
+
+    .search input {
+      width: 100%;
+      height: 34px;
+      padding: 0 12px 0 32px;
+      border: 1px solid var(--line);
+      border-radius: var(--r-sm);
+      background: var(--surface);
+      font-size: 12px;
+      color: var(--ink);
+      transition: border-color .16s ease, box-shadow .16s ease;
+    }
+
+    .search input::placeholder {
+      color: var(--ink-3);
+      opacity: 1;
+    }
+
+    .search input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(31, 77, 67, .1);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--ink-3);
+      pointer-events: none;
+    }
+
+    .tbl-row {
+      display: grid;
+      grid-template-columns: 1.25fr .8fr .55fr .95fr .6fr;
+      align-items: center;
+      gap: 14px;
+      padding: 10px 20px;
+    }
+
+    .tbl-head {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      background: var(--surface-2);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .tbl-scroll {
+      max-height: calc(100vh - 340px);
+      overflow-y: auto;
+    }
+
+    .tbl-row:not(.tbl-head) {
+      border-bottom: 1px solid #f0ede5;
+      font-size: 12px;
+      transition: background-color .14s ease;
+    }
+
+    .tbl-row:not(.tbl-head):hover {
+      background: var(--surface-2);
+    }
+
+    .tbl-row:last-child {
+      border-bottom: 0;
+    }
+
+    .district-name {
+      font-weight: 500;
+      color: var(--ink);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .disease-tag {
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 5px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 500;
+      text-transform: capitalize;
+    }
+
+    .muted {
+      color: var(--ink-3);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .num {
+      color: var(--ink-2);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .signal {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      justify-content: flex-end;
+      color: var(--danger);
+      font-weight: 500;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .signal i {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--danger);
+      flex-shrink: 0;
+    }
+
+    .tbl-row>span:nth-child(4),
+    .tbl-head>span:nth-child(5) {
+      text-align: right;
+    }
+
+    .empty {
+      padding: 32px 20px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--ink-3);
+    }
+
+    /* ── Tooltip ─────────────────────────────── */
+    #tooltip {
+      position: fixed;
+      z-index: 100;
+      max-width: 230px;
+      padding: 9px 11px;
+      border-radius: 8px;
+      background: #1c201e;
+      color: #f3f1ea;
+      box-shadow: 0 10px 28px rgba(20, 23, 21, .22);
+      pointer-events: none;
+      opacity: 0;
+      font-size: 11.5px;
+      line-height: 1.4;
+      transition: opacity .12s ease;
+    }
+
+    #tooltip b {
+      display: block;
+      font-weight: 600;
+      font-size: 12px;
+      margin-bottom: 2px;
+      color: #fffdf7;
+    }
+
+    #tooltip span {
+      display: block;
+      color: #c8cbc4;
+    }
+
+    #tooltip span.tip-quiet {
+      color: #9aa098;
+      margin-top: 2px;
+    }
+
+    /* ── Views ───────────────────────────────── */
+    .content.view-overview #sec-bottom,
+    .content.view-overview #sec-alerts {
+      display: none;
+    }
+
+    .content.view-surveillance #sec-kpis,
+    .content.view-surveillance #sec-readiness,
+    .content.view-surveillance #sec-allocation,
+    .content.view-surveillance #sec-alerts {
+      display: none;
+    }
+
+    .content.view-surveillance .grid-main {
+      grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr);
+    }
+
+    .content.view-surveillance .grid-bottom {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .content.view-surveillance #trend {
+      height: 420px;
+    }
+
+    .content.view-response #sec-kpis,
+    .content.view-response #sec-map,
+    .content.view-response #sec-trend,
+    .content.view-response #sec-calendar,
+    .content.view-response #sec-alerts {
+      display: none;
+    }
+
+    .content.view-response .grid-main {
+      display: block;
+    }
+
+    .content.view-response .side-col {
+      display: block;
+    }
+
+    .content.view-response .grid-bottom {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .content.view-response #sec-readiness .panel-body {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(260px, 1fr);
+      grid-template-areas: 'stats short' 'coverage short';
+      align-items: start;
+      gap: 18px 40px;
+    }
+
+    .content.view-response .ready-stats {
+      grid-area: stats;
+    }
+
+    .content.view-response .coverage {
+      grid-area: coverage;
+      margin-top: 0;
+    }
+
+    .content.view-response .shortfall {
+      grid-area: short;
+      align-self: stretch;
+      margin-top: 0;
+      padding-top: 0;
+      border-top: 0;
+      border-left: 1px solid var(--line);
+      padding-left: 40px;
+    }
+
+    .content.view-response,
+    .content.view-alerts {
+      width: 100%;
+      max-width: 1280px;
+    }
+
+    .content.view-alerts #sec-kpis,
+    .content.view-alerts #sec-main,
+    .content.view-alerts #sec-bottom {
+      display: none;
+    }
+
+    .content.view-alerts .tbl-scroll {
+      max-height: calc(100vh - 292px);
+    }
+
+    /* ── Responsive ──────────────────────────── */
+    @media (max-width: 1180px) {
+      .grid-main {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .side-col {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        align-items: start;
+      }
+
+      .content.view-surveillance .side-col {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .content.view-surveillance .grid-main {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      #map {
+        height: 400px;
+      }
+    }
+
+    @media (max-width: 980px) {
+      :root {
+        --sidebar: 76px;
+      }
+
+      .sidebar {
+        padding: 20px 10px 16px;
+        align-items: center;
+      }
+
+      .brand {
+        padding: 0 0 20px;
+        justify-content: center;
+      }
+
+      .brand-text,
+      .nav-section,
+      .nav-item span,
+      .foot-note {
+        display: none;
+      }
+
+      .nav-item {
+        width: 44px;
+        height: 42px;
+        padding: 0;
+        justify-content: center;
+        margin: 0 auto 4px;
+      }
+
+      .sidebar-footer {
+        display: none;
+      }
+
+      .topbar {
+        padding: 14px 22px 12px;
+      }
+
+      .content {
+        padding: 16px 22px 32px;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .topbar {
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 14px;
+      }
+
+      .filter-group {
+        width: 100%;
+      }
+
+      .field {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .field select {
+        width: 100%;
+        min-width: 0;
+      }
+
+      .kpi-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .side-col {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .content.view-response #sec-readiness .panel-body {
+        display: block;
+      }
+
+      .content.view-response .shortfall {
+        margin-top: 16px;
+        padding-top: 13px;
+        border-top: 1px solid var(--line);
+        border-left: 0;
+        padding-left: 0;
+      }
+
+      .map-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .rank {
+        display: none;
+      }
+
+      .grid-bottom {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      #map {
+        height: 360px;
+      }
+
+      .tbl-head,
+      .tbl-row {
+        min-width: 600px;
+      }
+
+      #sec-alerts {
+        overflow: hidden;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .topbar-title {
+        font-size: 22px;
+      }
+
+      .content {
+        padding: 14px 14px 28px;
+      }
+
+      .status-meta {
+        display: none;
+      }
+
+      .kpi {
+        padding: 14px 16px;
+      }
+
+      .kpi-val {
+        font-size: 26px;
+      }
+
+      .panel-head {
+        padding: 14px 15px 12px;
+      }
+
+      .panel-body {
+        padding: 14px 15px 16px;
+      }
+
+      .map-grid {
+        padding: 6px 15px 0;
+      }
+
+      .map-legend {
+        padding: 8px 15px 15px;
+      }
+
+      .alert-toolbar {
+        padding: 10px 15px;
+      }
+
+      .search {
+        width: 100%;
+      }
+
+      .chart-legend {
+        gap: 6px 12px;
+      }
+
+      .content.view-alerts .tbl-scroll {
+        max-height: calc(100vh - 330px);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .topbar-title {
+        font-size: clamp(20px, 6vw, 24px);
+      }
+
+      .kpi-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .kpi {
+        min-width: 0;
+        padding: 13px 13px 14px;
+      }
+
+      .kpi-label {
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
+        overflow-wrap: anywhere;
+        letter-spacing: .06em;
+        font-size: 9px;
+        line-height: 1.3;
+      }
+
+      .kpi-val {
+        font-size: clamp(22px, 7.2vw, 30px);
+        overflow-wrap: anywhere;
+      }
+
+      .kpi-sub {
+        overflow-wrap: anywhere;
+      }
+
+      .panel-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .panel-head>div {
+        width: 100%;
+        min-width: 0;
+      }
+
+      .panel-head .chip {
+        align-self: flex-start;
+      }
+
+      .map-grid {
+        display: block;
+        padding: 0;
+        gap: 0;
+      }
+
+      .map-wrap {
+        width: 100%;
+      }
+
+      #map {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 3 / 4;
+      }
+
+      .map-legend {
+        padding: 10px 15px 14px;
+        gap: 8px;
+        font-size: 10px;
+      }
+
+      .legend-bar {
+        width: 88px;
+      }
+
+      .ready-stat {
+        min-width: 0;
+        padding: 10px 10px 11px;
+      }
+
+      .ready-label {
+        white-space: normal;
+        overflow-wrap: anywhere;
+      }
+
+      .ready-val {
+        font-size: clamp(14px, 4vw, 18px);
+        white-space: nowrap;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <aside class="sidebar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="#fff" stroke-width="1.6"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3.2 10h3.1l1.9-4.6L11.4 15l1.9-5h3.5" />
+        </svg>
+      </span>
+      <div class="brand-text">
+        <div class="brand-name">EpiScope</div>
+        <div class="brand-sub">Bangladesh · Health</div>
+      </div>
+    </div>
+
+    <nav class="nav" aria-label="Workspace">
+      <div class="nav-section">Sections</div>
+      <button class="nav-item active" data-view="overview" aria-current="page">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.3"
+          aria-hidden="true">
+          <rect x="2" y="2" width="5" height="5" rx="1" />
+          <rect x="9" y="2" width="5" height="5" rx="1" />
+          <rect x="2" y="9" width="5" height="5" rx="1" />
+          <rect x="9" y="9" width="5" height="5" rx="1" />
+        </svg>
+        <span>Overview</span>
+      </button>
+      <button class="nav-item" data-view="surveillance">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.3"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M1.5 8h3l1.7-4.2L9 12.2 10.7 8h3.8" />
+        </svg>
+        <span>Trends</span>
+      </button>
+      <button class="nav-item" data-view="response">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.3"
+          stroke-linejoin="round" aria-hidden="true">
+          <path d="M8 1.9 14 5v6l-6 3.1L2 11V5z" />
+          <path d="M2 5l6 3 6-3M8 8v6" />
+        </svg>
+        <span>Supplies</span>
+      </button>
+      <button class="nav-item" data-view="alerts">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.3"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M8 2.2 14.4 13H1.6z" />
+          <path d="M8 6.2v3.4M8 11.3v.5" />
+        </svg>
+        <span>Alerts</span>
+      </button>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="live"><span class="pulse"></span> Live data</div>
+      <div class="foot-note">Bangladesh Ministry of Health</div>
+    </div>
+  </aside>
+
+  <div class="main">
+
+    <header class="topbar">
+      <div class="topbar-heading">
+        <h1 class="topbar-title">Disease overview</h1>
+        <p class="topbar-sub">Cases reported across the country and how ready we are to respond.</p>
+      </div>
+      <div class="filter-group">
+        <label class="field">
+          <span class="field-label">Disease</span>
+          <select id="disease" aria-label="Filter by disease"></select>
+          <svg class="field-chevron" viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor"
+            stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 4.6 6 7.6l3-3" />
+          </svg>
+        </label>
+        <label class="field">
+          <span class="field-label">District</span>
+          <select id="district" aria-label="Filter by district"></select>
+          <svg class="field-chevron" viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor"
+            stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 4.6 6 7.6l3-3" />
+          </svg>
+        </label>
+      </div>
+    </header>
+
+    <div class="content view-overview" id="content">
+
+      <div class="status" id="status" role="status" aria-live="polite">
+        <span class="dot"></span>
+        <span class="status-text">Loading the latest data…</span>
+        <span class="status-meta">small counts hidden</span>
+      </div>
+
+      <section class="kpi-row" id="sec-kpis" aria-label="Key indicators">
+        <article class="kpi c-cases">
+          <div class="kpi-label"><span class="kpi-dot"></span>Cases this week</div>
+          <div class="kpi-val" id="cases">—</div>
+          <div class="kpi-sub" id="reporting">Preparing…</div>
+        </article>
+        <article class="kpi c-alert">
+          <div class="kpi-label"><span class="kpi-dot"></span>Alerts raised</div>
+          <div class="kpi-val" id="alerts-kpi">—</div>
+          <div class="kpi-sub">All alerts · all weeks</div>
+        </article>
+        <article class="kpi c-forecast">
+          <div class="kpi-label"><span class="kpi-dot"></span>Next week's forecast</div>
+          <div class="kpi-val" id="forecast-kpi">—</div>
+          <div class="kpi-sub" id="forecast-sub">Preparing…</div>
+        </article>
+        <article class="kpi c-alloc">
+          <div class="kpi-label"><span class="kpi-dot"></span>Supplies sent</div>
+          <div class="kpi-val" id="allocation-kpi">—</div>
+          <div class="kpi-sub" id="allocation-sub">Units of supplies</div>
+        </article>
+      </section>
+
+      <section class="grid-main" id="sec-main">
+
+        <article class="panel" id="sec-map">
+          <div class="panel-head">
+            <div>
+              <h2 class="panel-title">Cases by district</h2>
+              <p class="panel-sub">Click or tap a district to see its details</p>
+            </div>
+            <span class="chip" id="week-note">Week —</span>
+          </div>
+          <div class="map-grid">
+            <div class="map-wrap">
+              <svg id="map" role="img" aria-label="Map of Bangladesh showing cases by district"></svg>
+            </div>
+            <div class="rank">
+              <div class="rank-head">Most cases</div>
+              <div id="map-rank"></div>
+            </div>
+          </div>
+          <div class="map-legend">
+            <span>Low</span>
+            <span class="legend-bar"></span>
+            <span>High</span>
+            <span class="legend-nodata"><i></i>No data</span>
+          </div>
+        </article>
+
+        <div class="side-col">
+
+          <article class="panel" id="sec-trend">
+            <div class="panel-head">
+              <div>
+                <h2 class="panel-title">Cases and forecast</h2>
+                <p class="panel-sub" id="trend-subtitle">—</p>
+              </div>
+              <span class="chip chip-accent">Forecast</span>
+            </div>
+            <div class="panel-body trend-wrap">
+              <svg id="trend" role="img" aria-label="Weekly cases with a forecast for coming weeks"></svg>
+              <div class="chart-legend">
+                <span class="lg"><i class="lg-line"></i>Reported</span>
+                <span class="lg"><i class="lg-line dashed"></i>Forecast</span>
+                <span class="lg"><i class="lg-ci"></i>Likely range</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel" id="sec-readiness">
+            <div class="panel-head">
+              <div>
+                <h2 class="panel-title">Supplies and readiness</h2>
+                <p class="panel-sub">Emergency supplies · all diseases</p>
+              </div>
+              <span class="chip chip-accent" id="ready-chip">—</span>
+            </div>
+            <div class="panel-body">
+              <div class="ready-stats">
+                <div class="ready-stat">
+                  <span class="ready-label">Needed</span>
+                  <span class="ready-val" id="need-total">—</span>
+                </div>
+                <div class="ready-stat">
+                  <span class="ready-label">Sent</span>
+                  <span class="ready-val" id="alloc-total">—</span>
+                </div>
+                <div class="ready-stat">
+                  <span class="ready-label">Still needed</span>
+                  <span class="ready-val is-danger" id="unmet-total">—</span>
+                </div>
+              </div>
+              <div class="coverage">
+                <div class="coverage-head"><span>Covered</span><span id="coverage-value">—</span></div>
+                <div class="coverage-track">
+                  <div class="coverage-fill" id="coverage-fill"></div>
+                </div>
+                <p class="ready-note" id="ready-note">—</p>
+              </div>
+              <div class="shortfall">
+                <div class="shortfall-head">Biggest gaps</div>
+                <div id="shortfall-list"></div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <section class="grid-bottom" id="sec-bottom">
+
+        <article class="panel" id="sec-calendar">
+          <div class="panel-head">
+            <div>
+              <h2 class="panel-title">Seasonal pattern</h2>
+              <p class="panel-sub">Average cases for each week of the year</p>
+            </div>
+            <span class="chip chip-amber">52 weeks</span>
+          </div>
+          <div class="panel-body cal-wrap">
+            <svg id="calendar" role="img" aria-label="Average cases for each week of the year"></svg>
+            <div class="chart-legend">
+              <span class="lg"><i class="lg-swatch cal"></i>Average cases</span>
+              <span class="lg"><i class="lg-swatch risk-routine"></i>Normal</span>
+              <span class="lg"><i class="lg-swatch risk-prepare"></i>Prepare</span>
+              <span class="lg"><i class="lg-swatch risk-peak"></i>Peak</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel" id="sec-allocation">
+          <div class="panel-head">
+            <div>
+              <h2 class="panel-title">Supplies by district</h2>
+              <p class="panel-sub">Needed vs sent · top 12 districts</p>
+            </div>
+            <span class="chip">Top 12</span>
+          </div>
+          <div class="panel-body alloc-wrap">
+            <svg id="allocation" role="img" aria-label="Supplies sent compared with supplies needed, by district"></svg>
+            <div class="chart-legend">
+              <span class="lg"><i class="lg-swatch accent"></i>Sent</span>
+              <span class="lg"><i class="lg-swatch track"></i>Still needed</span>
+            </div>
+          </div>
+        </article>
+
+      </section>
+
+      <article class="panel" id="sec-alerts">
+        <div class="panel-head">
+          <div>
+            <h2 class="panel-title">Early warnings</h2>
+            <p class="panel-sub" id="alert-count">Alerts, newest first</p>
+          </div>
+          <span class="chip chip-danger">Auto flag</span>
+        </div>
+        <div class="alert-toolbar">
+          <div class="search">
+            <svg class="search-icon" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor"
+              stroke-width="1.4" stroke-linecap="round" aria-hidden="true">
+              <circle cx="7" cy="7" r="4.3" />
+              <path d="M10.3 10.3 14 14" />
+            </svg>
+            <input id="alert-search" type="search" placeholder="Search district or disease"
+              aria-label="Search alerts">
+          </div>
+        </div>
+        <div class="tbl-head tbl-row">
+          <span>District</span>
+          <span>Disease</span>
+          <span>Week</span>
+          <span>Cases / usual</span>
+          <span>How unusual</span>
+        </div>
+        <div class="tbl-scroll" id="alert-table"></div>
+      </article>
+
+    </div>
+  </div>
+
+  <div id="tooltip" role="tooltip"></div>
+
+  <script>
+    (() => {
+      const DATA = ['epi_weekly.json', 'alerts.json', 'forecasts.json', 'allocation.json', 'calendar.json', 'bangladesh_districts.geojson'];
+      const reducedMotion = matchMedia('(prefers-reduced-motion:reduce)').matches;
+      const state = { disease: '', district: '', allocation: [], alerts: [], epi: [], forecasts: [], calendar: [], geo: null };
+      const aliases = { 'Brahamanbaria': 'Brahmanbaria', 'Jhalokati': 'Jhalokathi', 'Maulvibazar': 'Moulvibazar', 'Nawabganj': 'Chapainawabganj', 'Netrakona': 'Netrokona' };
+      const name = d => aliases[d] || d;
+      const fmt = d3.format(',d');
+      const pct = d3.format('.0%');
+
+      const rootStyle = getComputedStyle(document.documentElement);
+      const v = n => rootStyle.getPropertyValue(n).trim();
+      const C = {
+        surface: v('--surface'), ink: v('--ink'), ink2: v('--ink-2'), ink3: v('--ink-3'),
+        line: v('--line'), line2: v('--line-2'), accent: v('--accent'), amber: v('--amber'),
+        danger: v('--danger'), noData: v('--no-data'),
+        map: [v('--map-1'), v('--map-2'), v('--map-3'), v('--map-4')],
+        cal: [v('--cal-1'), v('--cal-2'), v('--cal-3'), v('--cal-4')]
+      };
+      const riskColour = { routine: C.line2, prepare: C.amber, peak: C.danger };
+      const riskLabel = { routine: 'normal week', prepare: 'get ready', peak: 'peak season' };
+
+      const tip = d3.select('#tooltip');
+      const hideTip = () => tip.style('opacity', 0);
+      function showTip(e, html) {
+        tip.html(html).style('opacity', 1);
+        const w = tip.node().offsetWidth, h = tip.node().offsetHeight;
+        tip
+          .style('left', Math.max(8, Math.min(e.clientX + 14, innerWidth - w - 12)) + 'px')
+          .style('top', Math.max(8, Math.min(e.clientY + 14, innerHeight - h - 12)) + 'px');
+      }
+
+      const setSelect = (id, vals) =>
+        d3.select(id).selectAll('option').data(vals).join('option').attr('value', d => d).text(d => d);
+
+      function counter(id, value) {
+        const node = d3.select(id);
+        if (reducedMotion) return node.text(fmt(value));
+        const start = +node.attr('data-value') || 0;
+        node.attr('data-value', value).interrupt().transition().duration(600)
+          .tween('text', () => t => node.text(fmt(Math.round(start + (value - start) * t))));
+      }
+
+      const canonicalRows = rows => rows.map(r => ({ ...r, district: name(r.district) }));
+
+      function latestRows() {
+        const filtered = state.epi.filter(d => d.disease_group === state.disease);
+        const latest = d3.max(filtered, d => d.week_start);
+        const rows = filtered.filter(d => d.week_start === latest);
+        return { latest, rows, sample: rows[0] };
+      }
+
+      function updateKpis() {
+        const { rows, sample } = latestRows();
+        const total = d3.sum(rows, d => +d.case_count || 0);
+        const alerts = state.alerts.filter(d => d.disease_group === state.disease).length;
+        const fc = state.forecasts.find(d =>
+          d.district === state.district && d.disease_group === state.disease && +d.horizon_weeks === 1);
+        const need = d3.sum(state.allocation, d => +d.need || 0);
+        const alloc = d3.sum(state.allocation, d => +d.allocated_units || 0);
+
+        counter('#cases', total);
+        counter('#alerts-kpi', alerts);
+        if (fc) counter('#forecast-kpi', Math.round(+fc.forecast_cases));
+        else d3.select('#forecast-kpi').text('—');
+        counter('#allocation-kpi', alloc);
+
+        const reporting = rows.filter(d => d.case_count != null).length;
+        d3.select('#reporting').text(
+          `${reporting} of ${rows.length} districts${sample ? ` · week ${sample.epi_week}, ${sample.epi_year}` : ''}`);
+        d3.select('#forecast-sub').text(fc ? `${state.district} · next week` : 'No forecast for this district');
+        d3.select('#allocation-sub').text(need ? `${pct(alloc / need)} of what is needed` : 'Units of supplies');
+      }
+
+      function drawReadiness() {
+        const need = d3.sum(state.allocation, d => +d.need || 0);
+        const alloc = d3.sum(state.allocation, d => +d.allocated_units || 0);
+        const unmet = d3.sum(state.allocation, d => +d.unmet_need || 0);
+        const funded = state.allocation.filter(d => +d.unmet_need === 0).length;
+        const coverage = need ? alloc / need : 0;
+
+        d3.select('#need-total').text(fmt(need));
+        d3.select('#alloc-total').text(fmt(alloc));
+        d3.select('#unmet-total').text(fmt(unmet));
+        d3.select('#coverage-value').text(pct(coverage));
+        d3.select('#ready-chip').text(`${pct(coverage)} covered`);
+        d3.select('#coverage-fill').style('width', (coverage * 100).toFixed(1) + '%');
+        d3.select('#ready-note').text(`${funded} of ${state.allocation.length} districts have all they need`);
+
+        const shortfalls = state.allocation
+          .filter(d => +d.unmet_need > 0)
+          .sort((a, b) => +b.unmet_need - +a.unmet_need)
+          .slice(0, 3);
+
+        d3.select('#shortfall-list').selectAll('div').data(shortfalls, d => d.district)
+          .join('div')
+          .attr('class', 'short-row')
+          .html(d => `<span>${d.district}</span><span class="short-val">−${fmt(+d.unmet_need)}</span>`);
+      }
+
+      function drawMap() {
+        const { rows, sample } = latestRows();
+        const byDistrict = new Map(rows.map(d => [d.district, d]));
+        const svg = d3.select('#map');
+        const W = svg.node().getBoundingClientRect().width || 600;
+        const H = svg.node().clientHeight || 460;
+        svg.attr('viewBox', `0 0 ${W} ${H}`)
+          .attr('preserveAspectRatio', 'xMidYMid meet')
+          .selectAll('*').remove();
+
+        if (!state.geo) return;
+
+        const featureName = f => name(f.properties?.district || f.properties?.DISTRICT || f.properties?.NAME_2 || f.properties?.shapeName || f.properties?.name || 'Unknown');
+        const padX = W < 480 ? 10 : 28;
+        const padY = W < 480 ? 8 : 12;
+        const proj = d3.geoIdentity().reflectY(true).fitExtent([[padX, padY], [W - padX, H - padY]], state.geo);
+        const path = d3.geoPath(proj);
+
+        const values = rows.filter(d => d.case_count != null).map(d => +d.case_count).sort(d3.ascending);
+        const cap = d3.quantile(values, .9) || d3.max(values) || 1;
+        const colour = d3.scaleSequential().domain([0, cap]).clamp(true)
+          .interpolator(d3.interpolateRgbBasis(C.map));
+
+        svg.append('g').selectAll('path').data(state.geo.features).join('path')
+          .attr('class', f => 'district' + (featureName(f) === state.district ? ' selected' : ''))
+          .attr('d', path)
+          .attr('fill', f => {
+            const r = byDistrict.get(featureName(f));
+            return r && r.case_count != null ? colour(+r.case_count) : C.noData;
+          })
+          .on('mousemove', (e, f) => {
+            const r = byDistrict.get(featureName(f));
+            const line = r && r.case_count != null
+              ? `${fmt(+r.case_count)} cases · ${(+r.incidence_per_100k || 0).toFixed(1)} per 100,000 people`
+              : 'No data this week';
+            showTip(e, `<b>${featureName(f)}</b><span>${line}</span>`);
+          })
+          .on('mouseleave', hideTip)
+          .on('click', (e, f) => {
+            state.district = featureName(f);
+            d3.select('#district').property('value', state.district);
+            render();
+          });
+
+        d3.select('#week-note').text(sample ? `Week ${sample.epi_week} · ${sample.epi_year}` : 'Week —');
+
+        const top = rows.filter(d => d.case_count != null)
+          .sort((a, b) => +b.case_count - +a.case_count)
+          .slice(0, 6);
+        const topMax = d3.max(top, d => +d.case_count) || 1;
+
+        const rank = d3.select('#map-rank');
+        rank.html(top.map((d, i) => `
+          <button class="rank-row" type="button" data-district="${d.district}">
+            <span class="rank-idx">${String(i + 1).padStart(2, '0')}</span>
+            <span class="rank-name">${d.district}</span>
+            <span class="rank-val">${fmt(+d.case_count)}</span>
+            <span class="rank-track"><span style="width:${Math.max(3, (+d.case_count / topMax) * 100)}%"></span></span>
+          </button>`).join(''));
+
+        rank.selectAll('.rank-row').on('click', function () {
+          state.district = this.dataset.district;
+          d3.select('#district').property('value', state.district);
+          render();
+        });
+      }
+
+      function drawTrend() {
+        const all = state.epi
+          .filter(d => d.district === state.district && d.disease_group === state.disease && d.case_count != null)
+          .sort((a, b) => d3.ascending(a.week_start, b.week_start))
+          .slice(-52);
+        const fc = state.forecasts
+          .filter(d => d.district === state.district && d.disease_group === state.disease)
+          .sort((a, b) => +a.horizon_weeks - +b.horizon_weeks);
+
+        const svg = d3.select('#trend');
+        const W = svg.node().clientWidth || 480;
+        const H = svg.node().clientHeight || 226;
+        const m = { t: 14, r: 16, b: 26, l: 42 };
+        svg.attr('viewBox', `0 0 ${W} ${H}`).selectAll('*').remove();
+        d3.select('#trend-subtitle').text(`${state.district} · ${state.disease} · last 52 weeks`);
+
+        if (!all.length) {
+          svg.append('text').attr('x', W / 2).attr('y', H / 2).attr('text-anchor', 'middle')
+            .attr('class', 'chart-empty').text('No data for this choice');
+          return;
+        }
+
+        const parsed = all.map(d => ({ ...d, date: new Date(d.week_start) }));
+        const last = parsed[parsed.length - 1];
+        const forecast = fc.map((d, i) => ({
+          ...d,
+          date: d.forecast_week
+            ? new Date(d.forecast_week)
+            : new Date(last.date.getTime() + (i + 1) * 6048e5)
+        })).filter(d => d.date >= last.date).sort((a, b) => a.date - b.date);
+
+        const span = [...parsed, ...forecast];
+        const extent = d3.extent(span, d => d.date);
+        const x = d3.scaleTime()
+          .domain([extent[0], new Date(+extent[1] + 3 * 864e5)])
+          .range([m.l, W - m.r]);
+        const ymax = d3.max(span, d => Math.max(+d.case_count || 0, +d.upper_95 || 0, +d.forecast_cases || 0)) || 1;
+        const y = d3.scaleLinear().domain([0, ymax * 1.12]).nice().range([H - m.b, m.t]);
+
+        svg.append('g').selectAll('line').data(y.ticks(4)).join('line')
+          .attr('class', 'gridline')
+          .attr('x1', m.l).attr('x2', W - m.r).attr('y1', y).attr('y2', y);
+
+        svg.append('g').attr('class', 'axis').attr('transform', `translate(${m.l},0)`)
+          .call(d3.axisLeft(y).ticks(4).tickSize(0).tickPadding(7));
+        svg.append('g').attr('class', 'axis').attr('transform', `translate(0,${H - m.b})`)
+          .call(d3.axisBottom(x).ticks(d3.timeMonth.every(6)).tickSize(0).tickPadding(8).tickFormat(d3.timeFormat('%b %y')));
+
+        if (forecast.length) {
+          svg.append('g').selectAll('line.ci').data(forecast).join('line')
+            .attr('class', 'ci')
+            .attr('x1', d => x(d.date)).attr('x2', d => x(d.date))
+            .attr('y1', d => y(+d.lower_95 || 0))
+            .attr('y2', d => y(+d.upper_95 || +d.forecast_cases || 0))
+            .attr('stroke', C.amber).attr('stroke-width', 1).attr('opacity', .42);
+
+          svg.append('path').datum([last, ...forecast])
+            .attr('fill', 'none').attr('stroke', C.amber).attr('stroke-width', 2)
+            .attr('stroke-dasharray', '4 4')
+            .attr('d', d3.line().x(d => x(d.date)).y(d => y(+d.forecast_cases || +d.case_count || 0)));
+
+          svg.selectAll('circle.fc').data(forecast).join('circle')
+            .attr('class', 'fc')
+            .attr('cx', d => x(d.date)).attr('cy', d => y(+d.forecast_cases || 0))
+            .attr('r', 2.4).attr('fill', C.amber).attr('opacity', .9);
+        }
+
+        svg.append('path').datum(parsed)
+          .attr('fill', C.accent).attr('opacity', .07)
+          .attr('d', d3.area().x(d => x(d.date)).y0(H - m.b).y1(d => y(+d.case_count || 0)));
+
+        const line = svg.append('path').datum(parsed)
+          .attr('fill', 'none').attr('stroke', C.accent).attr('stroke-width', 2)
+          .attr('stroke-linejoin', 'round').attr('stroke-linecap', 'round')
+          .attr('d', d3.line().x(d => x(d.date)).y(d => y(+d.case_count || 0)));
+
+        if (!reducedMotion) {
+          const len = line.node().getTotalLength();
+          line.attr('stroke-dasharray', `${len} ${len}`).attr('stroke-dashoffset', len)
+            .transition().duration(900).attr('stroke-dashoffset', 0);
+        }
+
+        svg.append('circle')
+          .attr('cx', x(last.date)).attr('cy', y(+last.case_count || 0)).attr('r', 3.4)
+          .attr('fill', C.accent).attr('stroke', C.surface).attr('stroke-width', 1.6);
+      }
+
+      function drawCalendar() {
+        const data = state.calendar
+          .filter(d => d.district === state.district && d.disease_group === state.disease && +d.epi_week <= 52)
+          .sort((a, b) => +a.epi_week - +b.epi_week);
+        const svg = d3.select('#calendar');
+        const W = svg.node().clientWidth || 900;
+        const H = svg.node().clientHeight || 150;
+        const m = { l: 16, r: 16, t: 24, b: 22 };
+        svg.attr('viewBox', `0 0 ${W} ${H}`).selectAll('*').remove();
+
+        if (!data.length) {
+          svg.append('text').attr('x', W / 2).attr('y', H / 2).attr('text-anchor', 'middle')
+            .attr('class', 'chart-empty').text('No seasonal data for this choice');
+          return;
+        }
+
+        const val = d => +d.cases || 0;
+        const values = data.map(val).sort(d3.ascending);
+        const cap = d3.quantile(values, .97) || d3.max(values) || 1;
+        const ramp = d3.interpolateRgbBasis(C.cal);
+        const colour = d3.scaleSequential(t => ramp(Math.pow(t, .55)))
+          .domain([0, cap]).clamp(true);
+        const xb = d3.scaleBand().domain(d3.range(1, 53)).range([m.l, W - m.r]).paddingInner(.16);
+        const cellH = 56;
+
+        svg.append('text').attr('x', m.l).attr('y', 13).attr('class', 'cal-cap').text('Average cases per week');
+
+        svg.selectAll('rect.cell').data(data).join('rect')
+          .attr('class', 'cell')
+          .attr('x', d => xb(+d.epi_week)).attr('y', m.t)
+          .attr('width', xb.bandwidth()).attr('height', cellH).attr('rx', 2)
+          .attr('fill', d => colour(val(d)))
+          .on('mousemove', (e, d) => showTip(e,
+            `<b>Week ${d.epi_week}</b><span>${val(d).toFixed(1)} average cases · ${riskLabel[d.risk_level] || d.risk_level}</span>` +
+            (d.recommended_action ? `<span class="tip-quiet">${d.recommended_action}</span>` : '')))
+          .on('mouseleave', hideTip);
+
+        svg.selectAll('rect.risk').data(data).join('rect')
+          .attr('class', 'risk')
+          .attr('x', d => xb(+d.epi_week)).attr('y', m.t + cellH + 6)
+          .attr('width', xb.bandwidth()).attr('height', 4).attr('rx', 2)
+          .attr('fill', d => riskColour[d.risk_level] || C.line2);
+
+        svg.append('g').attr('class', 'axis')
+          .attr('transform', `translate(0,${m.t + cellH + 18})`)
+          .call(d3.axisBottom(xb).tickValues([1, 13, 26, 39, 52]).tickSize(0)
+            .tickPadding(6).tickFormat(w => `W${w}`));
+      }
+
+      function drawAllocation() {
+        const data = state.allocation.slice()
+          .sort((a, b) => (+b.need || 0) - (+a.need || 0))
+          .slice(0, 12);
+        const svg = d3.select('#allocation');
+        const W = svg.node().clientWidth || 620;
+        const H = svg.node().clientHeight || 344;
+        const m = { t: 4, r: 104, b: 4, l: 104 };
+        svg.attr('viewBox', `0 0 ${W} ${H}`).selectAll('*').remove();
+
+        if (!data.length) {
+          svg.append('text').attr('x', W / 2).attr('y', H / 2).attr('text-anchor', 'middle')
+            .attr('class', 'chart-empty').text('No supply plan available');
+          return;
+        }
+
+        const max = d3.max(data, d => +d.need || 0) || 1;
+        const x = d3.scaleLinear().domain([0, max]).range([m.l, W - m.r]);
+        const y = d3.scaleBand().domain(data.map(d => d.district)).range([m.t, H - m.b])
+          .paddingInner(.44).paddingOuter(.08);
+
+        svg.selectAll('rect.track').data(data).join('rect')
+          .attr('class', 'track')
+          .attr('x', m.l).attr('y', d => y(d.district))
+          .attr('width', d => Math.max(2, x(+d.need) - m.l))
+          .attr('height', y.bandwidth()).attr('rx', 3)
+          .attr('fill', C.map[0]);
+
+        const width = d => Math.max(2, x(+d.allocated_units) - m.l);
+        const bars = svg.selectAll('rect.bar').data(data).join('rect')
+          .attr('class', 'bar')
+          .attr('x', m.l).attr('y', d => y(d.district))
+          .attr('height', y.bandwidth()).attr('rx', 3)
+          .attr('fill', C.accent)
+          .attr('width', d => reducedMotion ? width(d) : 2);
+
+        if (!reducedMotion) {
+          bars.transition().duration(650).delay((d, i) => i * 32).attr('width', width);
+        }
+
+        svg.selectAll('text.dname').data(data).join('text')
+          .attr('class', 'dname')
+          .attr('x', m.l - 10).attr('y', d => y(d.district) + y.bandwidth() / 2 + 3.5)
+          .attr('text-anchor', 'end').attr('font-size', 11)
+          .attr('fill', C.ink2).text(d => d.district);
+
+        svg.selectAll('text.dval').data(data).join('text')
+          .attr('class', 'dval')
+          .attr('x', W - m.r + 10).attr('y', d => y(d.district) + y.bandwidth() / 2 + 3.5)
+          .attr('font-size', 10.5).attr('fill', C.ink3)
+          .style('font-variant-numeric', 'tabular-nums')
+          .text(d => `${fmt(+d.allocated_units)} / ${fmt(+d.need)}`);
+      }
+
+      function alertRows() {
+        const search = d3.select('#alert-search').property('value').trim().toLowerCase();
+        const data = state.alerts
+          .filter(d => d.disease_group === state.disease &&
+            (!search || `${d.district} ${d.disease_group}`.toLowerCase().includes(search)))
+          .sort((a, b) => d3.descending(a.week_start, b.week_start))
+          .slice(0, 80);
+
+        const host = d3.select('#alert-table');
+        if (!data.length) {
+          host.html('<div class="empty">No alerts match your search.</div>');
+        } else {
+          host.selectAll('.tbl-row').data(data, d => `${d.district}-${d.epi_year}-${d.epi_week}`)
+            .join('div')
+            .attr('class', 'tbl-row')
+            .html(d => `<span class="district-name">${d.district}</span>
+              <span><span class="disease-tag">${d.disease_group}</span></span>
+              <span class="muted">${d.epi_year} W${String(d.epi_week).padStart(2, '0')}</span>
+              <span class="num">${d.observed_cases} / ${Number(d.baseline_mean).toFixed(1)}</span>
+              <span class="signal"><i></i>${Number(d.c2_score).toFixed(1)}</span>`);
+        }
+        d3.select('#alert-count').text(`${data.length} alerts · newest first`);
+      }
+
+      function render() {
+        updateKpis();
+        drawReadiness();
+        drawMap();
+        drawTrend();
+        drawCalendar();
+        drawAllocation();
+        alertRows();
+      }
+
+      const viewTitles = {
+        overview: ['Disease overview', 'Cases reported across the country and how ready we are to respond.'],
+        surveillance: ['Disease trends', 'Where cases are highest, how they change each week, and seasonal patterns.'],
+        response: ['Supplies and readiness', 'What districts need compared with supplies already sent.'],
+        alerts: ['Alerts to review', 'Early warnings that may need action.']
+      };
+
+      function setView(view) {
+        const content = document.querySelector('#content');
+        content.className = `content view-${view}`;
+        document.querySelectorAll('[data-view]').forEach(button => {
+          const active = button.dataset.view === view;
+          button.classList.toggle('active', active);
+          if (active) button.setAttribute('aria-current', 'page');
+          else button.removeAttribute('aria-current');
+        });
+        document.querySelector('.topbar-title').textContent = viewTitles[view][0];
+        document.querySelector('.topbar-sub').textContent = viewTitles[view][1];
+        content.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' });
+        render();
+      }
+
+      document.querySelectorAll('[data-view]')
+        .forEach(button => button.addEventListener('click', () => setView(button.dataset.view)));
+
+      let resizeTimer;
+      addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(render, 160);
+      });
+
+      Promise.all(DATA.map(f => d3.json(`data/${f}`))).then(([epi, alerts, forecasts, allocation, calendar, geo]) => {
+        state.epi = canonicalRows(epi);
+        state.alerts = canonicalRows(alerts);
+        state.forecasts = canonicalRows(forecasts);
+        state.allocation = canonicalRows(allocation);
+        state.calendar = canonicalRows(calendar);
+        state.geo = geo;
+
+        const diseases = [...new Set(state.epi.map(d => d.disease_group))].sort();
+        const districts = [...new Set(state.epi.map(d => d.district))].sort();
+        state.disease = diseases.includes('dengue') ? 'dengue' : diseases[0];
+        state.district = districts.includes('Dhaka') ? 'Dhaka' : districts[0];
+
+        setSelect('#disease', diseases);
+        setSelect('#district', districts);
+        d3.select('#disease').property('value', state.disease).on('change', e => {
+          state.disease = e.target.value;
+          render();
+        });
+        d3.select('#district').property('value', state.district).on('change', e => {
+          state.district = e.target.value;
+          render();
+        });
+        d3.select('#alert-search').on('input', alertRows);
+
+        const st = d3.select('#status').classed('error', false);
+        st.select('.status-text').text(
+          `Loaded · ${fmt(state.epi.length)} reports · ${fmt(state.alerts.length)} alerts`);
+        render();
+      }).catch(err => {
+        const st = d3.select('#status').classed('error', true);
+        st.select('.status-text').text(location.protocol === 'file:'
+          ? 'Start a local server at localhost:8000 to load the data.'
+          : `Could not load the data: ${err.message}`);
+        console.error(err);
+      });
+
+    })();
+  </script>
+</body>
+
+</html>
