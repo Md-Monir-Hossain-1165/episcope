@@ -1,5 +1,7 @@
 # EpiScope — Big Data Surveillance Platform
 
+**Live dashboard:** [episcope-m.vercel.app](https://episcope-m.vercel.app/)
+
 <!-- VIDEO LINK: [Add YouTube/Drive link here after recording] -->
 
 ## Quickstart (One Command)
