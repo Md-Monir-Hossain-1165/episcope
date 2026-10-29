@@ -1,5 +1,5 @@
 # EpiScope – Project Proposal
-**Course:** CSE4345 – Big Data Analytics | **Group:** Solo | **Date:** 2026-10-20
+**Course:** CSE4345 – Big Data Analytics | **Group:** Three-person team | **Date:** 2026-10-20
 
 ---
 
@@ -61,8 +61,15 @@ Bangladesh faces a heavy seasonal burden of infectious disease. Dengue follows t
 
 ---
 
-## 5. Role Assignment (Solo)
-All roles (Data Engineer, Analytics Engineer, Visualisation Engineer) are performed by a single student.
+## 5. Role Assignment (Three-Person Team)
+| Team member | Primary role | Responsibility |
+|---|---|---|
+| Author 1 — [Name / ID] | Data Engineer | Sources, Spark pipeline, quality, and reproducibility |
+| Author 2 — [Name / ID] | Analytics Engineer | Detection, forecasting, optimisation, and evaluation |
+| Author 3 — [Name / ID] | Visualisation Engineer | Dashboard, policy brief, report integration, and video |
+
+All members review the final report, claims, and presentation. Replace the
+placeholders with the group's actual names and IDs before submission.
 
 ---
 
