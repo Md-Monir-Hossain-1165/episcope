@@ -1855,8 +1855,15 @@
         const dRows = state.district ? rows.filter(d => d.district === state.district) : rows;
         const alerts = state.alerts.filter(d => d.disease_group === state.disease &&
           (!state.district || d.district === state.district)).length;
-        const fc = state.forecasts.find(d =>
-          d.district === state.district && d.disease_group === state.disease && +d.horizon_weeks === 1);
+        let fcValue = null;
+        if (state.district) {
+          const r = state.forecasts.find(d =>
+            d.district === state.district && d.disease_group === state.disease && +d.horizon_weeks === 1);
+          fcValue = r ? Math.round(+r.forecast_cases) : null;
+        } else {
+          const rows1 = state.forecasts.filter(d => d.disease_group === state.disease && +d.horizon_weeks === 1);
+          fcValue = rows1.length ? Math.round(d3.sum(rows1, d => +d.forecast_cases || 0)) : null;
+        }
         const allocRows = state.district
           ? state.allocation.filter(d => d.district === state.district) : state.allocation;
         const need = d3.sum(allocRows, d => +d.need || 0);
@@ -1870,7 +1877,7 @@
           counter('#cases', d3.sum(dRows, d => +d.case_count || 0));
         }
         counter('#alerts-kpi', alerts);
-        if (fc) counter('#forecast-kpi', Math.round(+fc.forecast_cases));
+        if (fcValue != null) counter('#forecast-kpi', fcValue);
         else d3.select('#forecast-kpi').text('—').attr('data-value', 0);
         counter('#allocation-kpi', alloc);
 
@@ -1879,7 +1886,8 @@
           : `${dRows.filter(d => d.case_count != null).length} of ${rows.length} districts` +
             `${sample ? ` · week ${sample.epi_week}, ${sample.epi_year}` : ''}`);
         d3.select('#alerts-sub').text(state.district ? `${state.district} · all weeks` : 'All alerts · all weeks');
-        d3.select('#forecast-sub').text(fc ? `${state.district} · next week` : 'No forecast for this district');
+        d3.select('#forecast-sub').text(fcValue != null
+          ? `${state.district || 'All districts'} · next week` : 'No forecast for this disease');
         d3.select('#allocation-sub').text(need ? `${pct(alloc / need)} of what is needed` : 'Units of supplies');
       }
 
@@ -1982,20 +1990,38 @@
       }
 
       function drawTrend() {
-        const all = state.epi
-          .filter(d => d.district === state.district && d.disease_group === state.disease && d.case_count != null)
-          .sort((a, b) => d3.ascending(a.week_start, b.week_start))
-          .slice(-52);
-        const fc = state.forecasts
-          .filter(d => d.district === state.district && d.disease_group === state.disease)
-          .sort((a, b) => +a.horizon_weeks - +b.horizon_weeks);
+        let all, fc;
+        if (state.district) {
+          all = state.epi
+            .filter(d => d.district === state.district && d.disease_group === state.disease && d.case_count != null)
+            .sort((a, b) => d3.ascending(a.week_start, b.week_start))
+            .slice(-52);
+          fc = state.forecasts
+            .filter(d => d.district === state.district && d.disease_group === state.disease)
+            .sort((a, b) => +a.horizon_weeks - b.horizon_weeks);
+        } else {
+          const byWeek = d3.group(state.epi.filter(d =>
+            d.disease_group === state.disease && d.case_count != null), d => d.week_start);
+          all = [...byWeek].map(([w, rows]) => ({
+            district: '', disease_group: state.disease, week_start: w,
+            case_count: d3.sum(rows, d => +d.case_count || 0)
+          })).sort((a, b) => d3.ascending(a.week_start, b.week_start)).slice(-52);
+          fc = [...d3.group(state.forecasts.filter(d =>
+            d.disease_group === state.disease), d => +d.horizon_weeks)]
+            .map(([h, rows]) => ({
+              district: '', disease_group: state.disease, horizon_weeks: h,
+              forecast_cases: d3.sum(rows, d => +d.forecast_cases || 0),
+              lower_95: d3.sum(rows, d => +d.lower_95 || 0),
+              upper_95: d3.sum(rows, d => +d.upper_95 || 0)
+            })).sort((a, b) => a.horizon_weeks - b.horizon_weeks);
+        }
 
         const svg = d3.select('#trend');
         const W = svg.node().clientWidth || 480;
         const H = svg.node().clientHeight || 226;
         const m = { t: 14, r: 16, b: 26, l: 42 };
         svg.attr('viewBox', `0 0 ${W} ${H}`).selectAll('*').remove();
-        d3.select('#trend-subtitle').text(`${state.district} · ${state.disease} · last 52 weeks`);
+        d3.select('#trend-subtitle').text(`${state.district || 'All districts'} · ${state.disease} · last 52 weeks`);
 
         if (!all.length) {
           svg.append('text').attr('x', W / 2).attr('y', H / 2).attr('text-anchor', 'middle')
@@ -2069,9 +2095,24 @@
       }
 
       function drawCalendar() {
-        const data = state.calendar
-          .filter(d => d.district === state.district && d.disease_group === state.disease && +d.epi_week <= 52)
-          .sort((a, b) => +a.epi_week - +b.epi_week);
+        let data;
+        if (state.district) {
+          data = state.calendar
+            .filter(d => d.district === state.district && d.disease_group === state.disease && +d.epi_week <= 52)
+            .sort((a, b) => +a.epi_week - b.epi_week);
+        } else {
+          const byWeek = d3.group(state.calendar.filter(d =>
+            d.disease_group === state.disease && +d.epi_week <= 52), d => +d.epi_week);
+          data = [...byWeek].map(([w, rows]) => ({
+            district: '', disease_group: state.disease, epi_week: w,
+            cases: d3.mean(rows, d => +d.cases || 0), risk_level: null, recommended_action: ''
+          })).sort((a, b) => a.epi_week - b.epi_week);
+          const ranked = [...data].sort((a, b) => a.cases - b.cases);
+          ranked.forEach((d, i) => {
+            d.risk_level = i < Math.floor(ranked.length / 3) ? 'routine'
+              : i < Math.floor(2 * ranked.length / 3) ? 'prepare' : 'peak';
+          });
+        }
         const svg = d3.select('#calendar');
         const W = svg.node().clientWidth || 900;
         const H = svg.node().clientHeight || 150;
@@ -2247,10 +2288,11 @@
         const diseases = [...new Set(state.epi.map(d => d.disease_group))].sort();
         const districts = [...new Set(state.epi.map(d => d.district))].sort();
         state.disease = diseases.includes('dengue') ? 'dengue' : diseases[0];
-        state.district = districts.includes('Dhaka') ? 'Dhaka' : districts[0];
+        state.district = '';   // national view until the user picks a district
 
         setSelect('#disease', diseases);
         setSelect('#district', districts);
+        d3.select('#district').insert('option', ':first-child').attr('value', '').text('All districts');
         d3.select('#disease').property('value', state.disease).on('change', e => {
           state.disease = e.target.value;
           render();
