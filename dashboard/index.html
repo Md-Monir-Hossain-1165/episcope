@@ -1623,7 +1623,7 @@
         <article class="kpi c-alert">
           <div class="kpi-label"><span class="kpi-dot"></span>Alerts raised</div>
           <div class="kpi-val" id="alerts-kpi">—</div>
-          <div class="kpi-sub">All alerts · all weeks</div>
+          <div class="kpi-sub" id="alerts-sub">All alerts · all weeks</div>
         </article>
         <article class="kpi c-forecast">
           <div class="kpi-label"><span class="kpi-dot"></span>Next week's forecast</div>
@@ -1852,31 +1852,44 @@
 
       function updateKpis() {
         const { rows, sample } = latestRows();
-        const total = d3.sum(rows, d => +d.case_count || 0);
-        const alerts = state.alerts.filter(d => d.disease_group === state.disease).length;
+        const dRows = state.district ? rows.filter(d => d.district === state.district) : rows;
+        const alerts = state.alerts.filter(d => d.disease_group === state.disease &&
+          (!state.district || d.district === state.district)).length;
         const fc = state.forecasts.find(d =>
           d.district === state.district && d.disease_group === state.disease && +d.horizon_weeks === 1);
-        const need = d3.sum(state.allocation, d => +d.need || 0);
-        const alloc = d3.sum(state.allocation, d => +d.allocated_units || 0);
+        const allocRows = state.district
+          ? state.allocation.filter(d => d.district === state.district) : state.allocation;
+        const need = d3.sum(allocRows, d => +d.need || 0);
+        const alloc = d3.sum(allocRows, d => +d.allocated_units || 0);
 
-        counter('#cases', total);
+        if (state.district) {
+          const r = dRows[0];
+          if (r && +r.case_count >= 0) counter('#cases', +r.case_count);
+          else d3.select('#cases').text('—').attr('data-value', 0);
+        } else {
+          counter('#cases', d3.sum(dRows, d => +d.case_count || 0));
+        }
         counter('#alerts-kpi', alerts);
         if (fc) counter('#forecast-kpi', Math.round(+fc.forecast_cases));
-        else d3.select('#forecast-kpi').text('—');
+        else d3.select('#forecast-kpi').text('—').attr('data-value', 0);
         counter('#allocation-kpi', alloc);
 
-        const reporting = rows.filter(d => d.case_count != null).length;
-        d3.select('#reporting').text(
-          `${reporting} of ${rows.length} districts${sample ? ` · week ${sample.epi_week}, ${sample.epi_year}` : ''}`);
+        d3.select('#reporting').text(state.district
+          ? `${state.district}${sample ? ` · week ${sample.epi_week}, ${sample.epi_year}` : ''}`
+          : `${dRows.filter(d => d.case_count != null).length} of ${rows.length} districts` +
+            `${sample ? ` · week ${sample.epi_week}, ${sample.epi_year}` : ''}`);
+        d3.select('#alerts-sub').text(state.district ? `${state.district} · all weeks` : 'All alerts · all weeks');
         d3.select('#forecast-sub').text(fc ? `${state.district} · next week` : 'No forecast for this district');
         d3.select('#allocation-sub').text(need ? `${pct(alloc / need)} of what is needed` : 'Units of supplies');
       }
 
       function drawReadiness() {
-        const need = d3.sum(state.allocation, d => +d.need || 0);
-        const alloc = d3.sum(state.allocation, d => +d.allocated_units || 0);
-        const unmet = d3.sum(state.allocation, d => +d.unmet_need || 0);
-        const funded = state.allocation.filter(d => +d.unmet_need === 0).length;
+        const rows = state.district
+          ? state.allocation.filter(d => d.district === state.district) : state.allocation;
+        const need = d3.sum(rows, d => +d.need || 0);
+        const alloc = d3.sum(rows, d => +d.allocated_units || 0);
+        const unmet = d3.sum(rows, d => +d.unmet_need || 0);
+        const funded = rows.filter(d => +d.unmet_need === 0).length;
         const coverage = need ? alloc / need : 0;
 
         d3.select('#need-total').text(fmt(need));
@@ -1885,9 +1898,12 @@
         d3.select('#coverage-value').text(pct(coverage));
         d3.select('#ready-chip').text(`${pct(coverage)} covered`);
         d3.select('#coverage-fill').style('width', (coverage * 100).toFixed(1) + '%');
-        d3.select('#ready-note').text(`${funded} of ${state.allocation.length} districts have all they need`);
+        d3.select('#ready-note').text(state.district
+          ? (funded ? `${state.district} has all it needs`
+                    : `${state.district} is short by ${fmt(unmet)} units`)
+          : `${funded} of ${state.allocation.length} districts have all they need`);
 
-        const shortfalls = state.allocation
+        const shortfalls = rows
           .filter(d => +d.unmet_need > 0)
           .sort((a, b) => +b.unmet_need - +a.unmet_need)
           .slice(0, 3);
