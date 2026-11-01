@@ -64,7 +64,7 @@ Bangladesh faces a heavy seasonal burden of infectious disease. Dengue follows t
 ## 5. Role Assignment (Three-Person Team)
 | Team member | Primary role | Responsibility |
 |---|---|---|
-| Author 1 — [Name / ID] | Data Engineer | Sources, Spark pipeline, quality, and reproducibility |
+| Riduanul Abedin Shihab (0222220005101164) | Data Engineering Lead | Sources, Spark pipeline, quality, and reproducibility |
 | Author 2 — [Name / ID] | Analytics Engineer | Detection, forecasting, optimisation, and evaluation |
 | Author 3 — [Name / ID] | Visualisation Engineer | Dashboard, policy brief, report integration, and video |
 

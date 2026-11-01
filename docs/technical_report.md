@@ -1,6 +1,6 @@
 # EpiScope: A Scalable Disease Surveillance and Response Platform for Bangladesh
 
-**Author 1: [Full name]** — [Student ID] — [Email]  
+**Author 1: Riduanul Abedin Shihab** — 0222220005101164 — riduanshihab00@gmail.com  
 **Author 2: [Full name]** — [Student ID] — [Email]  
 **Author 3: [Full name]** — [Student ID] — [Email]  
 **Course:** CSE4345 — Big Data Analytics  
@@ -145,9 +145,14 @@ equal contribution unless it reflects the work performed.
 
 | Contributor | Primary responsibility | Completed contribution | Review responsibility |
 |---|---|---|---|
-| Author 1 | Data engineering | [Fill in] | [Fill in] |
+| Riduanul Abedin Shihab (0222220005101164) | Data Engineering Lead | Synthetic encounter generator, Bronze–Silver–Gold PySpark pipeline, dynamic partition overwrites, broadcast joins, quarantine logging, and Makefile orchestration. | Data engineering architecture and EARS C2 methodology review |
 | Author 2 | Analytics and evaluation | [Fill in] | [Fill in] |
 | Author 3 | Dashboard, policy brief, and presentation | [Fill in] | [Fill in] |
+
+### Individual Contributor Statements
+
+**Riduanul Abedin Shihab (Data Engineering Lead):**
+> My main responsibility was the data platform, including the synthetic encounter generator and the Bronze–Silver–Gold PySpark pipeline. The hardest problem was not simply making the pipeline run, but ensuring that it worked correctly and consistently. It needed to accept new monthly files without duplicating weeks, reprocessing five years of history, or silently dropping invalid records. I addressed these challenges using dynamic partition overwrite, monthly-named Bronze files, broadcast joins for district mapping, and a retained quarantine system with per-run quality reports. This made excluded records inspectable rather than allowing them to disappear without explanation. I also contributed to the EARS C2 detection work and reproducibility layer. A single Makefile can regenerate the platform from raw inputs, helping make the evaluation repeatable. My biggest learning was that reliable big-data engineering depends more on discipline than on cluster size. Schemas, partitions, repeatable processing, and data lineage are essential for building a trustworthy system. I also learned the importance of treating each project component as a clear contract. The analytics and dashboard components depended on stable and well-documented data outputs. This experience improved both my technical skills and my understanding of collaborative software development.
 
 ## References
 
