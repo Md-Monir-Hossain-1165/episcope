@@ -1,52 +1,96 @@
-# Policy Brief: Turning Routine Surveillance into Earlier District Action
+# Policy Brief: Seeing Trouble Earlier, District by District
 
-**EpiScope — Bangladesh Disease Surveillance and Response Prototype**  
-**Audience:** Ministry of Health decision-makers, surveillance teams, district
-health officers, and emergency logistics planners.
+**EpiScope — Bangladesh Disease Surveillance and Response Prototype**
+**Prepared for:** the Director, Ministry of Health
+**Group 1 — TriScope**, CSE4345 Big Data Analytics, Premier University Chittagong
+**Date:** 02-11-2026
 
-## The Decision Problem
+*This brief is written for readers without a technical background. It mirrors
+Appendix A of the CEP technical report.*
 
-Routine case reports, weather signals, and supply information are difficult to
-review together when a district needs attention. Delayed recognition of unusual
-increases can delay investigation, stock movement, and prevention activities.
+## The Current Situation
 
-## What EpiScope Provides
+Bangladesh fights dengue, diarrhoeal disease, influenza-like illness, and
+malaria every year, but the information needed to act arrives late, in pieces,
+and in different systems. By the time a rise in cases is obvious, the best
+moment to pre-position supplies has often passed. District officers need an
+early, simple, trustworthy answer to three questions: *Where is something
+unusual happening? What should we expect next month? Where should limited
+supplies go first?*
 
-- A district-level view across all 64 Bangladesh districts.
-- EARS C2 early-warning signals to prioritise review.
-- Four-week SARIMA planning forecasts with uncertainty intervals.
-- Supply-allocation recommendations under a fixed national budget.
-- A seasonal preparedness calendar for pre-positioning and intensified
-  surveillance.
+EpiScope is a working prototype that answers these questions for all 64
+districts on a single screen. It was built and tested on 6.0 million realistic
+(synthetic) patient-visit records over five years, so every number, alert, and
+recommendation can be checked and reproduced before the system is ever trusted
+with real data.
 
-The current prototype processed 6.0 million encounter records into 83,127
-weekly epidemiological measures, 2,000 recent alert signals, 1,280 forecasts,
-and 64 allocation recommendations.
+## Top 3 Recommendations and Expected Impact
 
-## Recommended Use
+1. **Review the early-warning list every week, district by district.** EpiScope
+   flags unusual rises in cases and shows them in plain language ("highly
+   unusual week"). In testing it caught 26 of 30 simulated outbreaks.
+   *Expected impact: investigation teams start looking days earlier, while
+   prevention is still cheap.*
 
-1. **Review, do not automate.** Confirm signals with district teams before
-   declaring an outbreak.
-2. **Use weekly preparedness meetings.** Review burden, alerts, and forecasts
-   together.
-3. **Pre-position before seasonal peaks.** Use the calendar to plan supplies,
-   communication, and intensified surveillance.
-4. **Document allocation decisions.** Compare recommendations with local stock,
-   capacity, access, and equity before deployment.
-5. **Protect privacy.** Publish only aggregate district-week views.
+2. **Pre-position supplies before the seasonal peak, not after it.** The
+   seasonal calendar shows, for each district and disease, which weeks of the
+   year are historically quiet, rising, or at peak, and what action is
+   recommended. *Expected impact: fewer emergency deliveries and fewer
+   districts caught without stock at the worst moment.*
 
-## Safeguards Before Operational Adoption
+3. **Treat the supply plan as a starting point for discussion, not an order.**
+   The allocation tool recommends how to divide a fixed national budget across
+   districts and explains its reasoning. In testing it met slightly more total
+   need than a population-based share, but it concentrates supplies in a few
+   districts — so district realities must be checked before deployment.
+   *Expected impact: faster, more transparent allocation meetings with fewer
+   disputes.*
 
-- Validate thresholds and forecasts with governed real surveillance data.
-- Add facility capacity, transport time, local inventory, and equity constraints
-  to allocation decisions.
-- Establish clinical review, data-quality ownership, access controls, and an
-  escalation protocol.
-- Monitor false alerts, missed events, forecast error, and allocation outcomes.
+## How to Read the Dashboard
+
+The dashboard opens on the **whole country**. Pick a disease at the top; the
+map shades each district by its recent case count (darker means more cases;
+districts with very small counts are marked "small counts hidden" to protect
+privacy). Click any district and every number on the page updates for that
+district: cases this week, alerts raised, the forecast for next week with a
+likely range, and how well supplies cover the need. The **Trends** page shows
+the last year week by week, with the forecast drawn as a dashed line and a
+shaded likely range. The **Supplies** page shows what is needed, what is sent,
+and which districts are still short. The **Alerts** page lists recent unusual
+weeks, newest first, and can be searched by district name. Everything works on
+a phone as well as a computer.
+
+## Confidence and Limitations
+
+Be honest about what this prototype is. It has *not* been validated on real
+patient data, so its alerts and forecasts show *where to look*, not *what is
+true*. In testing, some signals arrived about five days after an outbreak had
+already started, and most weekly alerts turned out not to be outbreaks at
+all — which is why a human district review must confirm every signal before any
+public action. Forecasts are planning estimates with a stated range, not
+guarantees. Used this way — as a weekly discussion tool — the prototype is
+ready for a supervised pilot with real data.
+
+## Data-Protection Assurance
+
+No names, phone numbers, or addresses appear anywhere in the system. Patient
+identifiers are replaced with an unreadable code before any analysis begins,
+and the secret key that could reverse it is kept outside the project files.
+Counts of one to four cases are never shown, so no individual can be identified
+from a published number. The public dashboard contains only district-level
+weekly totals — there is no way to ask it about a person. These are the same
+safeguards a real deployment would require, and they are open to audit in the
+project repository.
 
 ## Bottom Line
 
-EpiScope is a reproducible decision-support prototype, not an automated
-outbreak-declaration system. Its value is combining existing signals into an
-earlier, transparent, auditable discussion about where to investigate and
-prepare first.
+EpiScope turns scattered routine reports into one clear weekly picture: where
+cases are unusual, what is likely next, and how to divide limited supplies
+fairly. It is a decision-support prototype, not an automatic alarm — its value
+is an earlier, transparent, auditable conversation about where to investigate
+and prepare first.
+
+---
+
+**Repository:** https://github.com/Md-Monir-Hossain-1165/episcope
+**Dashboard:** https://episcope-m.vercel.app
