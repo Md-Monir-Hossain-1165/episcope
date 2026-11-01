@@ -13,22 +13,6 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&display=swap"
     rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%231f4d43' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M3.2 10h3.1l1.9-4.6L11.4 15l1.9-5h3.5'/></svg>">
-  <script>
-    (() => {
-      try {
-        const saved = window.localStorage ? localStorage.getItem('episcope-theme') : null;
-        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (saved === 'dark' || (!saved && prefersDark)) {
-          document.documentElement.setAttribute('data-theme', 'dark');
-        } else {
-          document.documentElement.setAttribute('data-theme', 'light');
-        }
-      } catch (e) {
-        document.documentElement.setAttribute('data-theme', 'light');
-      }
-    })();
-  </script>
   <style>
     :root {
       color-scheme: light;
@@ -62,162 +46,6 @@
       --shadow: 0 1px 2px rgba(26, 29, 27, .04), 0 1px 1px rgba(26, 29, 27, .02);
       --font-ui: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
       --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
-    }
-
-    /* ── Dark Mode Theme Variables ────────────────── */
-    [data-theme="dark"] {
-      color-scheme: dark;
-      --paper: #101412;
-      --surface: #181d1a;
-      --surface-2: #202623;
-      --ink: #eef2ef;
-      --ink-2: #b2bcb5;
-      --ink-3: #7d8982;
-      --line: #27302c;
-      --line-2: #34403b;
-      --accent: #3eb495;
-      --accent-2: #52cca9;
-      --accent-soft: rgba(62, 180, 149, .15);
-      --danger: #e26155;
-      --danger-soft: rgba(226, 97, 85, .15);
-      --amber: #dea44a;
-      --amber-soft: rgba(222, 164, 74, .15);
-      --no-data: #222926;
-      --map-1: #202724;
-      --map-2: #24463b;
-      --map-3: #2d735d;
-      --map-4: #4dc7a4;
-      --cal-1: #26221d;
-      --cal-2: #563e2a;
-      --cal-3: #96673c;
-      --cal-4: #dea44a;
-      --shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 1px 2px rgba(0, 0, 0, .3);
-    }
-
-    [data-theme="dark"] .sidebar {
-      background: #131715;
-    }
-
-    [data-theme="dark"] .brand-mark {
-      background: var(--accent);
-    }
-
-    [data-theme="dark"] .brand-mark svg {
-      stroke: #101412;
-    }
-
-    [data-theme="dark"] .nav-item:hover {
-      background: #1c221f;
-    }
-
-    [data-theme="dark"] .tbl-row:not(.tbl-head) {
-      border-bottom-color: var(--line);
-    }
-
-    [data-theme="dark"] .chip-accent {
-      border-color: rgba(62, 180, 149, .28);
-    }
-
-    [data-theme="dark"] .chip-danger {
-      border-color: rgba(226, 97, 85, .28);
-    }
-
-    [data-theme="dark"] .chip-amber {
-      color: var(--amber);
-      border-color: rgba(222, 164, 74, .28);
-    }
-
-    [data-theme="dark"] #tooltip {
-      background: #232a26;
-      color: #eef2ef;
-      border: 1px solid var(--line);
-      box-shadow: 0 10px 28px rgba(0, 0, 0, .5);
-    }
-
-    [data-theme="dark"] #tooltip b {
-      color: #ffffff;
-    }
-
-    [data-theme="dark"] .district {
-      stroke: rgba(16, 20, 18, .75);
-    }
-
-    [data-theme="dark"] .district:hover,
-    [data-theme="dark"] .district.selected {
-      stroke: #ffffff;
-    }
-
-    /* ── Theme Toggle Button ─────────────────── */
-    .theme-field {
-      flex-shrink: 0;
-    }
-
-    .theme-toggle-btn {
-      appearance: none;
-      -webkit-appearance: none;
-      height: 36px;
-      padding: 0 12px;
-      border: 1px solid var(--line);
-      border-radius: var(--r-sm);
-      background: var(--surface);
-      color: var(--ink);
-      font-size: 12.5px;
-      font-weight: 500;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      transition: background-color .16s ease, border-color .16s ease, color .16s ease, box-shadow .16s ease;
-      -webkit-user-select: none;
-      user-select: none;
-    }
-
-    .theme-toggle-btn:hover {
-      border-color: var(--line-2);
-      background: var(--surface-2);
-    }
-
-    .theme-toggle-btn:focus-visible {
-      outline: none;
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(31, 77, 67, .15);
-    }
-
-    .theme-toggle-btn svg {
-      flex-shrink: 0;
-      color: var(--ink-2);
-      transition: color .16s ease, transform .2s ease;
-    }
-
-    .theme-toggle-btn:hover svg {
-      color: var(--ink);
-    }
-
-    .theme-toggle-btn .icon-sun {
-      display: none;
-    }
-    .theme-toggle-btn .icon-moon {
-      display: block;
-    }
-
-    [data-theme="dark"] .theme-toggle-btn .icon-sun {
-      display: block;
-    }
-    [data-theme="dark"] .theme-toggle-btn .icon-moon {
-      display: none;
-    }
-
-    @media (max-width: 860px) {
-      .theme-field {
-        flex: 1;
-        min-width: 0;
-      }
-      .theme-toggle-btn {
-        width: 100%;
-        justify-content: center;
-
-      }
-
     }
 
     *,
@@ -1775,19 +1603,6 @@
             <path d="M3 4.6 6 7.6l3-3" />
           </svg>
         </label>
-        <div class="field theme-field">
-          <span class="field-label">Theme</span>
-          <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Switch between light and dark mode" title="Switch theme">
-            <svg class="icon-moon" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M13.5 9.8A6 6 0 1 1 6.2 2.5a4.8 4.8 0 0 0 7.3 7.3z"/>
-            </svg>
-            <svg class="icon-sun" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="8" cy="8" r="3"/>
-              <path d="M8 1.5v1.5M8 13v1.5M1.5 8H3M13 8h1.5M3.4 3.4l1.1 1.1M11.5 11.5l1.1 1.1M3.4 12.6l1.1-1.1M11.5 4.5l1.1-1.1"/>
-            </svg>
-            <span class="theme-text">Dark</span>
-          </button>
-        </div>
       </div>
     </header>
 
@@ -2004,57 +1819,6 @@
       };
       const riskColour = { routine: C.line2, prepare: C.amber, peak: C.danger };
       const riskLabel = { routine: 'normal week', prepare: 'get ready', peak: 'peak season' };
-
-      function updateColors() {
-        const cs = getComputedStyle(document.documentElement);
-        const val = n => cs.getPropertyValue(n).trim();
-        C.surface = val('--surface');
-        C.ink = val('--ink');
-        C.ink2 = val('--ink-2');
-        C.ink3 = val('--ink-3');
-        C.line = val('--line');
-        C.line2 = val('--line-2');
-        C.accent = val('--accent');
-        C.amber = val('--amber');
-        C.danger = val('--danger');
-        C.noData = val('--no-data');
-        C.map = [val('--map-1'), val('--map-2'), val('--map-3'), val('--map-4')];
-        C.cal = [val('--cal-1'), val('--cal-2'), val('--cal-3'), val('--cal-4')];
-        riskColour.routine = C.line2;
-        riskColour.prepare = C.amber;
-        riskColour.peak = C.danger;
-      }
-
-      function setTheme(theme) {
-        const isDark = theme === 'dark';
-        document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
-        try {
-          if (window.localStorage) {
-            localStorage.setItem('episcope-theme', isDark ? 'dark' : 'light');
-          }
-        } catch (e) {}
-        const txt = document.querySelector('.theme-text');
-        if (txt) txt.textContent = isDark ? 'Light' : 'Dark';
-        const btn = document.getElementById('theme-toggle');
-        if (btn) {
-          btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
-          btn.setAttribute('title', isDark ? 'Switch to light mode' : 'Switch to dark mode');
-        }
-        updateColors();
-      }
-
-      const initialTheme = document.documentElement.getAttribute('data-theme') || 'light';
-      setTheme(initialTheme);
-
-      const themeToggleBtn = document.getElementById('theme-toggle');
-      if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', () => {
-          const current = document.documentElement.getAttribute('data-theme');
-          const next = current === 'dark' ? 'light' : 'dark';
-          setTheme(next);
-          render();
-        });
-      }
 
       const tip = d3.select('#tooltip');
       const hideTip = () => tip.style('opacity', 0);
@@ -2473,7 +2237,6 @@
       }
 
       function render() {
-        if (!state.epi || !state.epi.length) return;
         updateKpis();
         drawReadiness();
         drawMap();
@@ -2546,13 +2309,9 @@
         render();
       }).catch(err => {
         const st = d3.select('#status').classed('error', true);
-        if (location.protocol === 'file:') {
-          st.select('.status-text').html(
-            'Browser security blocks local data on file://. Run <code>make dashboard</code> or view live at <a href="https://episcope-m.vercel.app" target="_blank" style="color:inherit;text-decoration:underline;">episcope-m.vercel.app</a>'
-          );
-        } else {
-          st.select('.status-text').text(`Could not load data: ${err.message}`);
-        }
+        st.select('.status-text').text(location.protocol === 'file:'
+          ? 'Start a local server at localhost:8000 to load the data.'
+          : `Could not load the data: ${err.message}`);
         console.error(err);
       });
 
