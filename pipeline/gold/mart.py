@@ -2,6 +2,9 @@
 Gold Mart – ING-3, PRV-2, DQ-3
 Silver -> Gold: weekly district-disease aggregates with small-cell suppression.
 Run: python pipeline/gold/mart.py
+
+Author: Riduanul Abedin Shihab (0222220005101164) — Data Engineering Lead
+Course: CSE4345 Big Data Analytics
 """
 import time
 from pathlib import Path

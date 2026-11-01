@@ -2,6 +2,9 @@
 S1 Downloader – Bangladesh District Boundaries (ADM2 GeoJSON)
 Source: geoBoundaries / HDX
 Saves to: pipeline/bronze/boundaries/
+
+Author: Riduanul Abedin Shihab (0222220005101164) — Data Engineering Lead
+Course: CSE4345 Big Data Analytics
 """
 
 import requests

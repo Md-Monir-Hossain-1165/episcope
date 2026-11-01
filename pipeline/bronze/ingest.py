@@ -6,6 +6,9 @@ Heavy files use PySpark; small reference files use Pandas.
 
 Usage:
     python pipeline/bronze/ingest.py
+
+Author: Riduanul Abedin Shihab (0222220005101164) — Data Engineering Lead
+Course: CSE4345 Big Data Analytics
 """
 
 import hashlib, time, os, sys

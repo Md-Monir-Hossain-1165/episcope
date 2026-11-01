@@ -5,6 +5,9 @@ Output: pipeline/bronze/stock/stock_YYYY_MM.parquet
 
 Usage:
     python generator/generate_s6_stock.py --seed 42
+
+Author: Riduanul Abedin Shihab (0222220005101164) — Data Engineering Lead
+Course: CSE4345 Big Data Analytics
 """
 
 import argparse

@@ -4,6 +4,9 @@ Also exports a summary table to pipeline/gold/quality_report/
 
 Can be run standalone to validate any Parquet file:
     python pipeline/quality/rules.py --src pipeline/bronze/encounters
+
+Author: Riduanul Abedin Shihab (0222220005101164) — Data Engineering Lead
+Course: CSE4345 Big Data Analytics
 """
 
 import argparse, time

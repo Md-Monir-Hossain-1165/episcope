@@ -1,5 +1,10 @@
+"""
+Author: Riduanul Abedin Shihab (0222220005101164) — Data Engineering Lead
+Course: CSE4345 Big Data Analytics
+"""
+
 from pathlib import Path
-base = Path("E:/BDA_complex/episcope")
+base = Path(__file__).resolve().parent
 
 items = [
     ("S1 GeoJSON", base/"pipeline/bronze/boundaries/bangladesh_adm2.geojson"),

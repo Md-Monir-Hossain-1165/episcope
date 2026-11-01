@@ -3,6 +3,9 @@ Incremental Load – ING-4
 Drop new files into pipeline/bronze/encounters/incremental/ and run this.
 Idempotent: dynamic partition overwrite, never creates duplicates.
 Run: python pipeline/silver/incremental.py
+
+Author: Riduanul Abedin Shihab (0222220005101164) — Data Engineering Lead
+Course: CSE4345 Big Data Analytics
 """
 import hashlib, os, time
 from pathlib import Path

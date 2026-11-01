@@ -5,6 +5,9 @@ Output: pipeline/bronze/facilities/facility_registry.csv
 
 Usage:
     python generator/generate_s5_facilities.py --seed 42
+
+Author: Riduanul Abedin Shihab (0222220005101164) — Data Engineering Lead
+Course: CSE4345 Big Data Analytics
 """
 
 import argparse

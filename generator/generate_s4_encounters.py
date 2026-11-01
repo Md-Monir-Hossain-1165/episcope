@@ -10,6 +10,9 @@ Usage:
 Output:
     pipeline/bronze/encounters/encounters_YYYY_MM.parquet  (partitioned)
     generator/ground_truth_outbreaks.csv                   (NEVER read by detection code)
+
+Author: Riduanul Abedin Shihab (0222220005101164) — Data Engineering Lead
+Course: CSE4345 Big Data Analytics
 """
 
 import argparse

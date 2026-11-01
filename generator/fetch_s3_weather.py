@@ -8,6 +8,9 @@ Usage:
 
 Requirements:
     pip install requests
+
+Author: Riduanul Abedin Shihab (0222220005101164) — Data Engineering Lead
+Course: CSE4345 Big Data Analytics
 """
 
 import requests

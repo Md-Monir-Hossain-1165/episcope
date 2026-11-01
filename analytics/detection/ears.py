@@ -1,4 +1,8 @@
-"""Weekly EARS C2 outbreak detection with a CUSUM comparison (AN-1/AN-3)."""
+"""Weekly EARS C2 outbreak detection with a CUSUM comparison (AN-1/AN-3).
+
+Author: Riduanul Abedin Shihab (0222220005101164) — Data Engineering Lead
+Course: CSE4345 Big Data Analytics
+"""
 from pathlib import Path
 import numpy as np
 import pandas as pd

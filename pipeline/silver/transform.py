@@ -2,6 +2,9 @@
 Silver Transform – ING-2, ING-3, ING-4, DQ-1, DQ-2, DQ-3, PRV-1
 Single-pass quality tagging, broadcast join, dynamic partition overwrite.
 Run: python pipeline/silver/transform.py [--date 2023_01]
+
+Author: Riduanul Abedin Shihab (0222220005101164) — Data Engineering Lead
+Course: CSE4345 Big Data Analytics
 """
 import argparse, hashlib, os, time
 from pathlib import Path
