@@ -38,3 +38,16 @@ Thumbs.db
 
 # Jupyter
 .ipynb_checkpoints/
+
+# Generated pipeline datasets
+pipeline/bronze/encounters_registered/
+pipeline/bronze/stock_registered/
+pipeline/silver/encounters/
+pipeline/silver/quarantine/
+pipeline/gold/epi_weekly/
+pipeline/gold/stock_weekly/
+serving/data/
+
+# Spark generated files
+*.crc
+_SUCCESS
